@@ -185,83 +185,78 @@ struct ScreenView: View {
 //Sign Up
 struct signUp: View {
     
-    @State private var name = ""
     @State private var email = ""
     @State private var password = ""
     
     var body: some View {
         
         ZStack {
-            
-            VStack {
-                
-                Image("logo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(.leading, 150)
-                    .padding(.trailing, 150)
-                    .padding(.bottom, 25)
-                    .padding(.top, 100)
-                
-                Text("Create account")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.center)
-                
-                TextField("Name", text: $name)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(hue: 1.0, saturation: 0.022, brightness: 0.923)/*@END_MENU_TOKEN@*/)
-                    .cornerRadius(50)
-                    .padding(.top, 10)
-
-                TextField("Email", text: $email)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(hue: 1.0, saturation: 0.022, brightness: 0.923)/*@END_MENU_TOKEN@*/)
-                    .cornerRadius(50)
-
-                
-                TextField("Password", text: $password)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(hue: 1.0, saturation: 0.022, brightness: 0.923)/*@END_MENU_TOKEN@*/)
-                    .cornerRadius(50)
-
-                
-                Button(action: {}, label: {
-                    Text("Sign up")
-                        .font(.title3)
+                            
+                VStack {
+                    
+                    Spacer()
+                    
+                    Text("Create account")
+                        .font(.title)
                         .fontWeight(.semibold)
+                        .multilineTextAlignment(.center)
+                    
+                    TextField("Email", text: $email)
                         .padding()
                         .frame(width: 300, height: 50)
-                        .background(.green)
+                        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(hue: 1.0, saturation: 0.022, brightness: 0.923)/*@END_MENU_TOKEN@*/)
                         .cornerRadius(50)
-                        .padding(.top, 16)
-                        .foregroundColor(.black)
-                })
-                
-                Text("By creating an account you are agree to our Terms and Conditions")
-                    .font(.footnote)
-                    .multilineTextAlignment(.center)
-                    .padding(.leading, 50)
-                    .padding(.trailing, 50)
-                
-                Spacer()
-                
-                HStack {
+                        .padding(.top, 10)
+
+                    SecureField("Password", text: $password)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(hue: 1.0, saturation: 0.022, brightness: 0.923)/*@END_MENU_TOKEN@*/)
+                        .cornerRadius(50)
+
                     
-                    Text("Already have an account?")
-                        .font(.footnote)
+                    SecureField(" Confirm Password", text: $password)
+                        .padding()
+                        .frame(width: 300, height: 50)
+                        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(hue: 1.0, saturation: 0.022, brightness: 0.923)/*@END_MENU_TOKEN@*/)
+                        .cornerRadius(50)
+                        .padding(.bottom, 16)
+
                     
                     Button(action: {}, label: {
-                        Text("Sign in")
-                            .font(.footnote)
+                        Text("Sign up")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                            .padding()
+                            .frame(width: 300, height: 50)
+                            .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(red: 1.0, green: 0.0, blue: 0.21176470588235294)/*@END_MENU_TOKEN@*/)
+                            .cornerRadius(50)
+                            .foregroundColor(.white)
                     })
-                } .padding()
-                
-            }
+                    
+                    Text("By creating an account you are agree to our Terms and Conditions")
+                        .font(.footnote)
+                        .multilineTextAlignment(.center)
+                        .padding(.leading, 50)
+                        .padding(.trailing, 50)
+                    
+                    Spacer()
+                    
+                    HStack {
+                        
+                        Text("Already have an account?")
+                            .font(.footnote)
+                        
+                        Button(action: {}, label: {
+                            Text("Sign in")
+                                .font(.footnote)
+                        })
+                    } .padding()
+                    
+                }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Image("sign").resizable().aspectRatio(contentMode: .fill)).ignoresSafeArea()
     }
 }
 
@@ -277,13 +272,7 @@ struct signIn: View {
             
             VStack {
                 
-                Image("logo")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding(.leading, 150)
-                    .padding(.trailing, 150)
-                    .padding(.bottom, 25)
-                    .padding(.top, 100)
+                Spacer()
                 
                 Text("Sign In")
                     .font(.title)
@@ -302,6 +291,7 @@ struct signIn: View {
                     .frame(width: 300, height: 50)
                     .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(hue: 1.0, saturation: 0.022, brightness: 0.923)/*@END_MENU_TOKEN@*/)
                     .cornerRadius(50)
+                    .padding(.bottom, 16)
 
                 
                 Button(action: {}, label: {
@@ -310,16 +300,28 @@ struct signIn: View {
                         .fontWeight(.semibold)
                         .padding()
                         .frame(width: 300, height: 50)
-                        .background(.green)
+                        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(red: 1.0, green: 0.0, blue: 0.212)/*@END_MENU_TOKEN@*/)
                         .cornerRadius(50)
-                        .padding(.top, 16)
-                        .foregroundColor(.black)
+                        .foregroundColor(.white)
                 })
                 
                 Spacer()
                 
+                HStack {
+                    
+                    Text("Don't have an account?")
+                        .font(.footnote)
+                    
+                    Button(action: {}, label: {
+                        Text("Sign up")
+                            .font(.footnote)
+                    })
+                } .padding()
+                                
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Image("sign").resizable().aspectRatio(contentMode: .fill)).ignoresSafeArea()
     }
 }
 
