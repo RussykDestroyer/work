@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Sidebar: View {
     @ObservedObject var homeData : HomeViewModel
+    
     var body: some View{
         
         VStack {

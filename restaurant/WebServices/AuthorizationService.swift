@@ -31,7 +31,7 @@ struct LoginResponse: Codable {
 //    let success: Bool?
 }
 
-class Webservice {
+class AuthWebservice {
 
     func login(username: String, password: String, completion: @escaping(Result<String, AuthenticationError>) -> Void){
 

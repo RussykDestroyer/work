@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct Home: View {
-    
+        
     @StateObject var HomeModel = HomeViewModel()
     @State var animationAmount = 1.0
+    
     var body: some View{
         ZStack{
             
@@ -95,6 +96,9 @@ struct Home: View {
             
             // calling locatin delegate
             HomeModel.locationManager.delegate = HomeModel
+            
+            // calling getAllDishes service
+            HomeModel.getDishes()
         })
     }
 }

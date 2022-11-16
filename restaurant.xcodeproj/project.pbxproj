@@ -19,6 +19,7 @@
 		ACDD471C2924F9ED0006ED5F /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD471B2924F9ED0006ED5F /* AuthorizationService.swift */; };
 		ACDD471E29250DD40006ED5F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD471D29250DD40006ED5F /* Login.swift */; };
 		ACDD472029250E1D0006ED5F /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD471F29250E1D0006ED5F /* Registration.swift */; };
+		ACDD47242925288B0006ED5F /* MenuWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD47232925288B0006ED5F /* MenuWebService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		ACDD471B2924F9ED0006ED5F /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
 		ACDD471D29250DD40006ED5F /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		ACDD471F29250E1D0006ED5F /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
+		ACDD47232925288B0006ED5F /* MenuWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuWebService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				ACDD471B2924F9ED0006ED5F /* AuthorizationService.swift */,
+				ACDD47232925288B0006ED5F /* MenuWebService.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACDD47242925288B0006ED5F /* MenuWebService.swift in Sources */,
 				ACDD470F29249AEB0006ED5F /* Menu.swift in Sources */,
 				59C8FC702922EC5400A0AAF6 /* ContentView.swift in Sources */,
 				ACDD47132924AD630006ED5F /* Home.swift in Sources */,

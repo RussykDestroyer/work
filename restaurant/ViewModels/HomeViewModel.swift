@@ -10,6 +10,7 @@ import CoreLocation
 
 
 class HomeViewModel: NSObject, ObservableObject, CLLocationManagerDelegate{
+    @Published var dishes = [Dish]()
     
     @Published var locationManager = CLLocationManager()
     @Published var search = ""
@@ -21,6 +22,20 @@ class HomeViewModel: NSObject, ObservableObject, CLLocationManagerDelegate{
     
     // Sidebar...
     @Published var showMenu = false
+    
+    func getDishes(){
+        MenuWebService().getAllDishes(){ result in
+            switch result{
+            case .success(let dishes):
+                DispatchQueue.main.async {
+                    self.dishes = dishes
+                }
+            case .failure(let error):
+                //self.loginAlert = true
+                print(error.localizedDescription)
+            }
+        }
+    }
     
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager){

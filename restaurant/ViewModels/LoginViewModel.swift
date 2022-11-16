@@ -23,7 +23,7 @@ class LoginViewModel: ObservableObject{
         
         let defaults = UserDefaults.standard
         
-        Webservice().login(username: username, password: password){ result in
+        AuthWebservice().login(username: username, password: password){ result in
             switch result {
             case .success(let token):
                 print(token)
