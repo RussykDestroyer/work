@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         
         if currentPage > totalPages {
-            signIn()
+            Home()
         }
         else {
             OnboardingScreen()

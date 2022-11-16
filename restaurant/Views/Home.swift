@@ -6,60 +6,98 @@
 //
 
 import SwiftUI
+import SlidingTabView
 
 struct Home: View {
     
+    @State private var tabIndex = 0
+    
     @StateObject var HomeModel = HomeViewModel()
     @State var animationAmount = 1.0
-    var body: some View{
+    var body: some View {
+        
         ZStack{
             
-            VStack(spacing: 10){
+            //navigation
+            VStack(){
                 
-                HStack(spacing: 15){
+                HStack(){
+                    
                     Button(action: {
                         withAnimation(.easeIn){HomeModel.showMenu.toggle()}
                     }, label: {
-                        Image(systemName: "line.horizontal.3")
-                            .font(.title)
-                            .foregroundColor(Color.pink)
+                        Image("menuButton")
+                            .resizable()
+                            .frame(width: 35, height: 35)
+                            
                     })
                     
-                    Text(HomeModel.userLocation == nil ? "Locating..." : "Deliver To")
-                        .foregroundColor(.black)
-                    
-                    Text(HomeModel.userAddress)
-                        .font(.caption)
-                        .fontWeight(.heavy)
-                        .foregroundColor(Color.pink)
-                    
-                    Spacer(minLength: 0)
-                }
-                .padding([.horizontal, .top])
-                
-                Divider()
-                
-                HStack(spacing: 15){
-                    
-                    TextField("Search", text: $HomeModel.search)
-                    
-                    if HomeModel.search != "" {
+                    HStack {
+                        Image(systemName: "location")
+                            .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 1.0, green: 0.0, blue: 0.212)/*@END_MENU_TOKEN@*/)
+                            .padding(.leading, 16)
                         
+                        Text(HomeModel.userLocation == nil ? "" : "")
+                            .foregroundColor(.black)
+                        
+                        Text(HomeModel.userAddress)
+                            .font(.caption)
+                            .fontWeight(.heavy)
+                            .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 0.23921568627450981, green: 0.2196078431372549, blue: 0.2196078431372549, opacity: 0.5)/*@END_MENU_TOKEN@*/)
+                            .padding(.trailing, 50)
+                        
+                        Spacer(minLength: 0)
+                    }
+                }
+                
+                .padding([.horizontal, .top])
+                .padding(.bottom, 15)
+                
+                Text("Menu")
+                    .padding(.trailing, 250)
+                    .padding(.bottom, 15)
+                    .fontWeight(.bold)
+                    .font(.title)
+                    .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 1.0, green: 0.0, blue: 0.0)/*@END_MENU_TOKEN@*/)
+                
+                HStack(){
+                    
+                    TextField("Search for a food item", text: $HomeModel.search)
+                        .frame(maxWidth: .infinity, maxHeight: 40)
+                        .padding(.leading, 25)
+                        .background(.white)
+                        .cornerRadius(50)
+                    
+                        
+
+                    if HomeModel.search != "" {
+
                         Button(action: {}, label: {
+                            
                             Image(systemName: "magnifyingglass")
-                                .font(.title2)
+                                .resizable()
+                                .frame(maxWidth: 20, maxHeight: 20)
                                 .foregroundColor(.gray)
+                    
                         })
                         .animation(Animation.easeIn, value: animationAmount)
                     }
                 }
                 .padding(.horizontal)
-                .padding(.top, 10)
+                .padding(.leading, 20)
+                .padding(.trailing, 20)
                 
-                Divider()
                 
+                SlidingTabView(selection: $tabIndex, tabs: ["Nachos", "Nachos Texanos", "a", "b", "c"], animation: .easeInOut)
+                    
+                
+                    
+                
+                
+
                 Spacer()
-            }
+              }
+                     
             
             // Side menu
             
@@ -91,10 +129,12 @@ struct Home: View {
                     .background(Color.black.opacity(0.3).ignoresSafeArea())
             }
         }
+        
         .onAppear(perform: {
             
             // calling locatin delegate
             HomeModel.locationManager.delegate = HomeModel
         })
+        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(red: 0.9607843137254902, green: 0.9607843137254902, blue: 0.9607843137254902)/*@END_MENU_TOKEN@*/)
     }
 }
