@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         
         if currentPage > totalPages {
-            signUp()
+            signIn()
         }
         else {
             OnboardingScreen()
@@ -182,172 +182,31 @@ struct ScreenView: View {
     }
 }
 
-//Sign Up
-struct signUp: View {
-    
-    @State private var email = ""
-    @State private var password = ""
-    
-    var body: some View {
-        
-        ZStack {
-                            
-                VStack {
-                    
-                    Spacer()
-                    
-                    Text("Create account")
-                        .font(.title)
-                        .fontWeight(.semibold)
-                        .multilineTextAlignment(.center)
-                    
-                    TextField("Email", text: $email)
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(hue: 1.0, saturation: 0.022, brightness: 0.923)/*@END_MENU_TOKEN@*/)
-                        .cornerRadius(50)
-                        .padding(.top, 10)
 
-                    SecureField("Password", text: $password)
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(hue: 1.0, saturation: 0.022, brightness: 0.923)/*@END_MENU_TOKEN@*/)
-                        .cornerRadius(50)
-
-                    
-                    SecureField(" Confirm Password", text: $password)
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(hue: 1.0, saturation: 0.022, brightness: 0.923)/*@END_MENU_TOKEN@*/)
-                        .cornerRadius(50)
-                        .padding(.bottom, 16)
-
-                    
-                    Button(action: {}, label: {
-                        Text("Sign up")
-                            .font(.title3)
-                            .fontWeight(.semibold)
-                            .padding()
-                            .frame(width: 300, height: 50)
-                            .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(red: 1.0, green: 0.0, blue: 0.21176470588235294)/*@END_MENU_TOKEN@*/)
-                            .cornerRadius(50)
-                            .foregroundColor(.white)
-                    })
-                    
-                    Text("By creating an account you are agree to our Terms and Conditions")
-                        .font(.footnote)
-                        .multilineTextAlignment(.center)
-                        .padding(.leading, 50)
-                        .padding(.trailing, 50)
-                    
-                    Spacer()
-                    
-                    HStack {
-                        
-                        Text("Already have an account?")
-                            .font(.footnote)
-                        
-                        Button(action: {}, label: {
-                            Text("Sign in")
-                                .font(.footnote)
-                        })
-                    } .padding()
-                    
-                }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Image("sign").resizable().aspectRatio(contentMode: .fill)).ignoresSafeArea()
-    }
-}
-
-//Sign In
-struct signIn: View {
-    
-    @State private var email = ""
-    @State private var password = ""
-    
-    var body: some View {
-        
-        ZStack {
-            
-            VStack {
-                
-                Spacer()
-                
-                Text("Sign In")
-                    .font(.title)
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.center)
-                
-                TextField("Email", text: $email)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(hue: 1.0, saturation: 0.022, brightness: 0.923)/*@END_MENU_TOKEN@*/)
-                    .cornerRadius(50)
-
-                
-                TextField("Password", text: $password)
-                    .padding()
-                    .frame(width: 300, height: 50)
-                    .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(hue: 1.0, saturation: 0.022, brightness: 0.923)/*@END_MENU_TOKEN@*/)
-                    .cornerRadius(50)
-                    .padding(.bottom, 16)
-
-                
-                Button(action: {}, label: {
-                    Text("Sign in")
-                        .font(.title3)
-                        .fontWeight(.semibold)
-                        .padding()
-                        .frame(width: 300, height: 50)
-                        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(red: 1.0, green: 0.0, blue: 0.212)/*@END_MENU_TOKEN@*/)
-                        .cornerRadius(50)
-                        .foregroundColor(.white)
-                })
-                
-                Spacer()
-                
-                HStack {
-                    
-                    Text("Don't have an account?")
-                        .font(.footnote)
-                    
-                    Button(action: {}, label: {
-                        Text("Sign up")
-                            .font(.footnote)
-                    })
-                } .padding()
-                                
-            }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Image("sign").resizable().aspectRatio(contentMode: .fill)).ignoresSafeArea()
-    }
-}
 
 //Home
-struct Home: View {
-    var body: some View {
-        TabView {
-            Menu()
-                .tabItem() {
-                    Image(systemName: "book")
-                    Text("Menu")
-                }
-            Cart()
-                .tabItem() {
-                    Image(systemName: "basket")
-                    Text("Basket")
-                }
-            MyProfile()
-                .tabItem() {
-                    Image(systemName: "person")
-                    Text("My Profile")
-                }
-        }
-        .accentColor(.black)
-    }
-}
+//struct Home: View {
+//    var body: some View {
+//        TabView {
+//            Menu()
+//                .tabItem() {
+//                    Image(systemName: "book")
+//                    Text("Menu")
+//                }
+//            Cart()
+//                .tabItem() {
+//                    Image(systemName: "basket")
+//                    Text("Basket")
+//                }
+//            MyProfile()
+//                .tabItem() {
+//                    Image(systemName: "person")
+//                    Text("My Profile")
+//                }
+//        }
+//        .accentColor(.black)
+//    }
+//}
 
 //Menu
 struct Menu: View {

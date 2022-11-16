@@ -11,6 +11,14 @@
 		59C8FC702922EC5400A0AAF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C8FC6F2922EC5400A0AAF6 /* ContentView.swift */; };
 		59C8FC722922EC5500A0AAF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59C8FC712922EC5500A0AAF6 /* Assets.xcassets */; };
 		59C8FC752922EC5500A0AAF6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59C8FC742922EC5500A0AAF6 /* Preview Assets.xcassets */; };
+		ACDD470F29249AEB0006ED5F /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD470E29249AEB0006ED5F /* Menu.swift */; };
+		ACDD47132924AD630006ED5F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD47122924AD630006ED5F /* Home.swift */; };
+		ACDD47152924B1BD0006ED5F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD47142924B1BD0006ED5F /* HomeViewModel.swift */; };
+		ACDD47172924C7550006ED5F /* Sidebar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD47162924C7550006ED5F /* Sidebar.swift */; };
+		ACDD47192924EE9A0006ED5F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD47182924EE9A0006ED5F /* LoginViewModel.swift */; };
+		ACDD471C2924F9ED0006ED5F /* AuthorizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD471B2924F9ED0006ED5F /* AuthorizationService.swift */; };
+		ACDD471E29250DD40006ED5F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD471D29250DD40006ED5F /* Login.swift */; };
+		ACDD472029250E1D0006ED5F /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD471F29250E1D0006ED5F /* Registration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +28,14 @@
 		59C8FC6F2922EC5400A0AAF6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		59C8FC712922EC5500A0AAF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59C8FC742922EC5500A0AAF6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ACDD470E29249AEB0006ED5F /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		ACDD47122924AD630006ED5F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		ACDD47142924B1BD0006ED5F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		ACDD47162924C7550006ED5F /* Sidebar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sidebar.swift; sourceTree = "<group>"; };
+		ACDD47182924EE9A0006ED5F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		ACDD471B2924F9ED0006ED5F /* AuthorizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationService.swift; sourceTree = "<group>"; };
+		ACDD471D29250DD40006ED5F /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		ACDD471F29250E1D0006ED5F /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +68,10 @@
 		59C8FC6C2922EC5400A0AAF6 /* restaurant */ = {
 			isa = PBXGroup;
 			children = (
+				ACDD471A2924F9CC0006ED5F /* WebServices */,
+				ACDD47112924AC500006ED5F /* ViewModels */,
+				ACDD47102924AC360006ED5F /* Views */,
+				ACDD470D29249AC50006ED5F /* Models */,
 				59403FBA29246E1F003FAA2D /* Info.plist */,
 				59C8FC6D2922EC5400A0AAF6 /* restaurantApp.swift */,
 				59C8FC6F2922EC5400A0AAF6 /* ContentView.swift */,
@@ -67,6 +87,42 @@
 				59C8FC742922EC5500A0AAF6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ACDD470D29249AC50006ED5F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ACDD470E29249AEB0006ED5F /* Menu.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ACDD47102924AC360006ED5F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ACDD47122924AD630006ED5F /* Home.swift */,
+				ACDD47162924C7550006ED5F /* Sidebar.swift */,
+				ACDD471D29250DD40006ED5F /* Login.swift */,
+				ACDD471F29250E1D0006ED5F /* Registration.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		ACDD47112924AC500006ED5F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				ACDD47142924B1BD0006ED5F /* HomeViewModel.swift */,
+				ACDD47182924EE9A0006ED5F /* LoginViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		ACDD471A2924F9CC0006ED5F /* WebServices */ = {
+			isa = PBXGroup;
+			children = (
+				ACDD471B2924F9ED0006ED5F /* AuthorizationService.swift */,
+			);
+			path = WebServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +195,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACDD470F29249AEB0006ED5F /* Menu.swift in Sources */,
 				59C8FC702922EC5400A0AAF6 /* ContentView.swift in Sources */,
+				ACDD47132924AD630006ED5F /* Home.swift in Sources */,
+				ACDD47152924B1BD0006ED5F /* HomeViewModel.swift in Sources */,
+				ACDD47172924C7550006ED5F /* Sidebar.swift in Sources */,
 				59C8FC6E2922EC5400A0AAF6 /* restaurantApp.swift in Sources */,
+				ACDD471E29250DD40006ED5F /* Login.swift in Sources */,
+				ACDD47192924EE9A0006ED5F /* LoginViewModel.swift in Sources */,
+				ACDD472029250E1D0006ED5F /* Registration.swift in Sources */,
+				ACDD471C2924F9ED0006ED5F /* AuthorizationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
