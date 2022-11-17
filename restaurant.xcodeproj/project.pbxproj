@@ -28,6 +28,9 @@
 		ACDD473229263BF40006ED5F /* CustomNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD473129263BF40006ED5F /* CustomNavView.swift */; };
 		ACDD473429263D640006ED5F /* CustomNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD473329263D640006ED5F /* CustomNavLink.swift */; };
 		ACDD4736292642050006ED5F /* CustomNavBarPreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD4735292642050006ED5F /* CustomNavBarPreferenceKeys.swift */; };
+		ACDD4738292661C00006ED5F /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD4737292661C00006ED5F /* CartModel.swift */; };
+		ACDD473A292663590006ED5F /* CartWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD4739292663590006ED5F /* CartWebService.swift */; };
+		ACDD473E2926644F0006ED5F /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD473D2926644F0006ED5F /* CartViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		ACDD473129263BF40006ED5F /* CustomNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavView.swift; sourceTree = "<group>"; };
 		ACDD473329263D640006ED5F /* CustomNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavLink.swift; sourceTree = "<group>"; };
 		ACDD4735292642050006ED5F /* CustomNavBarPreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarPreferenceKeys.swift; sourceTree = "<group>"; };
+		ACDD4737292661C00006ED5F /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		ACDD4739292663590006ED5F /* CartWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartWebService.swift; sourceTree = "<group>"; };
+		ACDD473D2926644F0006ED5F /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				ACDD470E29249AEB0006ED5F /* Menu.swift */,
+				ACDD4737292661C00006ED5F /* CartModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,6 +141,7 @@
 			children = (
 				ACDD47142924B1BD0006ED5F /* HomeViewModel.swift */,
 				ACDD47182924EE9A0006ED5F /* LoginViewModel.swift */,
+				ACDD473D2926644F0006ED5F /* CartViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -143,6 +151,7 @@
 			children = (
 				ACDD471B2924F9ED0006ED5F /* AuthorizationService.swift */,
 				ACDD47232925288B0006ED5F /* MenuWebService.swift */,
+				ACDD4739292663590006ED5F /* CartWebService.swift */,
 			);
 			path = WebServices;
 			sourceTree = "<group>";
@@ -245,7 +254,10 @@
 				59C8FC702922EC5400A0AAF6 /* ContentView.swift in Sources */,
 				ACDD47132924AD630006ED5F /* Home.swift in Sources */,
 				ACDD47152924B1BD0006ED5F /* HomeViewModel.swift in Sources */,
+				ACDD4738292661C00006ED5F /* CartModel.swift in Sources */,
+				ACDD473A292663590006ED5F /* CartWebService.swift in Sources */,
 				ACDD473229263BF40006ED5F /* CustomNavView.swift in Sources */,
+				ACDD473E2926644F0006ED5F /* CartViewModel.swift in Sources */,
 				ACDD47172924C7550006ED5F /* Sidebar.swift in Sources */,
 				ACDD47292925745B0006ED5F /* HexToUIColor.swift in Sources */,
 				59C8FC6E2922EC5400A0AAF6 /* restaurantApp.swift in Sources */,

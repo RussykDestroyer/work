@@ -10,10 +10,9 @@ import SwiftUI
 
 
 struct CartView: View{
-    @State private var pickingUp = false
+    @StateObject var CartVM = CartViewModel()
     
     var body: some View{
-        NavigationView{
             ZStack{
                 VStack{
                     HStack{
@@ -45,7 +44,7 @@ struct CartView: View{
                         .overlay(.gray)
                         .padding(.horizontal, 25)
                     
-                    Toggle(isOn: $pickingUp){
+                    Toggle(isOn: $CartVM.pickingUp){
                         Text("Picking up")
                             .frame(alignment: .trailing)
                             .font(.system(size: 18))
@@ -89,7 +88,6 @@ struct CartView: View{
                         .frame(minWidth: 300)
                         .background(.white)
                         .cornerRadius(25)
-                        .shadow(color: .gray, radius: 5)
                         //                    .overlay(
                         //                        RoundedRectangle(cornerRadius: 25)
                         //                            .stroke(Color(hexStringToUIColor(hex: "#CDCDCD")), lineWidth: 1)
@@ -105,7 +103,7 @@ struct CartView: View{
                     ScrollView(.vertical){
                         VStack(spacing:0){
                             VStack(alignment: .leading, spacing:0){
-                                ForEach(0..<15){_ in
+                                ForEach(CartVM.cartItems, id: \.id){cartItem in
                                     HStack{
                                         VStack(spacing: 0) {
                                             Button(action: {}, label: {
@@ -120,7 +118,7 @@ struct CartView: View{
                                             //                                .frame(width: 60, height: 0.8)
                                             //                                .overlay(.gray)
                                             
-                                            Text("1")
+                                            Text(String(cartItem.count))
                                                 .frame(width: 60, height: 40)
                                                 .background(.white)
                                             
@@ -138,7 +136,7 @@ struct CartView: View{
                                         }
                                         .background(.white)
                                         .cornerRadius(10)
-                                        .shadow(color: .gray, radius: 5)
+                                        
                                         //                        .overlay(
                                         //                            RoundedRectangle(cornerRadius: 10)
                                         //                                .stroke(Color(hexStringToUIColor(hex: "#CDCDCD")), lineWidth: 1)
@@ -147,7 +145,7 @@ struct CartView: View{
                                         Spacer()
                                         
                                         VStack(alignment: .leading, spacing: 0, content: {
-                                            Text("Hueva burger")
+                                            Text(cartItem.dish.name)
                                                 .font(.system(size: 12))
                                                 .fontWeight(.bold)
                                                 .foregroundColor(Color(hexStringToUIColor(hex: "#3D3838")))
@@ -158,7 +156,7 @@ struct CartView: View{
                                                 .foregroundColor(Color(hexStringToUIColor(hex: "#A8A8A8")))
                                             
                                             
-                                            Text("$12")
+                                            Text("$\(String(format: "%.2f", cartItem.sum_price))")
                                                 .font(.system(size: 20))
                                                 .fontWeight(.bold)
                                                 .foregroundColor(Color(hexStringToUIColor(hex: "#FF0036")))
@@ -201,7 +199,7 @@ struct CartView: View{
                                     
                                     Spacer()
                                     
-                                    Text("$20")
+                                    Text("$" + String(format: "%.2f", CartVM.total_cart_items_price))
                                         .font(.system(size: 12))
                                         .fontWeight(.bold)
                                         .foregroundColor(Color(hexStringToUIColor(hex: "#FF0036")))
@@ -215,24 +213,27 @@ struct CartView: View{
                                     
                                     Spacer()
                                     
-                                    Text("$1")
+                                    Text("$" + String(format: "%.2f", CartVM.tax))
                                         .font(.system(size: 12))
                                         .fontWeight(.bold)
                                         .foregroundColor(Color(hexStringToUIColor(hex: "#FF0036")))
                                 }
                                 
-                                HStack{
-                                    Text("Shipping:")
-                                        .font(.system(size: 12))
-                                        .fontWeight(.bold)
-                                        .foregroundColor(Color(hexStringToUIColor(hex: "#A8A8A8")))
+                                if !CartVM.pickingUp{
                                     
-                                    Spacer()
-                                    
-                                    Text("$21")
-                                        .font(.system(size: 12))
-                                        .fontWeight(.bold)
-                                        .foregroundColor(Color(hexStringToUIColor(hex: "#FF0036")))
+                                    HStack{
+                                        Text("Shipping:")
+                                            .font(.system(size: 12))
+                                            .fontWeight(.bold)
+                                            .foregroundColor(Color(hexStringToUIColor(hex: "#A8A8A8")))
+                                        
+                                        Spacer()
+                                        
+                                        Text("$5")
+                                            .font(.system(size: 12))
+                                            .fontWeight(.bold)
+                                            .foregroundColor(Color(hexStringToUIColor(hex: "#FF0036")))
+                                    }
                                 }
                                 
                                 Divider()
@@ -248,7 +249,7 @@ struct CartView: View{
                                     
                                     Spacer()
                                     
-                                    Text("$21")
+                                    Text("$" + String(format: "%.2f", CartVM.total_cart_price))
                                         .font(.system(size: 15))
                                         .fontWeight(.bold)
                                         .foregroundColor(Color(hexStringToUIColor(hex: "#FF0036")))
@@ -268,15 +269,25 @@ struct CartView: View{
                     }.ignoresSafeArea()
                 }
                 .background(Color(hexStringToUIColor(hex: "#F5F5F5")))
-                .overlay(ConfirmationButton(), alignment: .bottom)
+                .overlay(ConfirmationButton(total_price: CartVM.total_cart_price), alignment: .bottom)
                 
             }
-            
+            .onAppear(perform: {
+                
+                // calling getAllDishes service
+                CartVM.getCartItems()
+                
+            })
         }
-    }
 }
 
 struct ConfirmationButton: View{
+    
+    private var total_price: Float = 0
+    
+    init(total_price: Float){
+        self.total_price = total_price
+    }
     var body: some View{
         VStack(alignment: .leading, spacing: 15) {
             Button(action: {}, label: {
@@ -285,7 +296,7 @@ struct ConfirmationButton: View{
                         .font(.system(size: 15))
                         .fontWeight(.bold)
                         .foregroundColor(Color(hexStringToUIColor(hex: "#3D3838")))
-                    Text("$25")
+                    Text("$" + String(format: "%.2f", self.total_price))
                         .font(.system(size: 15))
                         .fontWeight(.bold)
                         .foregroundColor(Color(hexStringToUIColor(hex: "#FF0036")))
@@ -294,7 +305,6 @@ struct ConfirmationButton: View{
             .frame(maxWidth: .infinity, maxHeight: 50)
             .background(Color(hexStringToUIColor(hex: "FFD9E1")))
             .cornerRadius(25)
-            .shadow(color: .gray, radius: 5)
         }
         .frame(minWidth: 300, alignment: .bottom)
         .padding(25)

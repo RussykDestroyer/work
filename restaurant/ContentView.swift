@@ -264,12 +264,12 @@ struct Menu: View {
     }
 }
 
-//Cart
-struct Cart: View {
-    var body: some View {
-        Text("fff")
-    }
-}
+////Cart
+//struct Cart: View {
+//    var body: some View {
+//        Text("fff")
+//    }
+//}
 
 //MyProfile
 struct MyProfile: View {
