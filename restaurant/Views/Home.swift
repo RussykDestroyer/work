@@ -6,60 +6,219 @@
 //
 
 import SwiftUI
+import SlidingTabView
 
 struct Home: View {
-        
+    
+    @State private var tabIndex = 0
+    
     @StateObject var HomeModel = HomeViewModel()
     @State var animationAmount = 1.0
-    
-    var body: some View{
+    var body: some View {
+        
         ZStack{
             
-            VStack(spacing: 10){
+            //navigation
+            VStack(){
                 
-                HStack(spacing: 15){
+                HStack(){
+                    
                     Button(action: {
                         withAnimation(.easeIn){HomeModel.showMenu.toggle()}
                     }, label: {
-                        Image(systemName: "line.horizontal.3")
-                            .font(.title)
-                            .foregroundColor(Color.pink)
+                        Image("menuButton")
+                            .resizable()
+                            .frame(width: 35, height: 35)
+                        
                     })
                     
-                    Text(HomeModel.userLocation == nil ? "Locating..." : "Deliver To")
-                        .foregroundColor(.black)
-                    
-                    Text(HomeModel.userAddress)
-                        .font(.caption)
-                        .fontWeight(.heavy)
-                        .foregroundColor(Color.pink)
-                    
-                    Spacer(minLength: 0)
+                    HStack {
+                        Image(systemName: "location")
+                            .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 1.0, green: 0.0, blue: 0.212)/*@END_MENU_TOKEN@*/)
+                            .padding(.leading, 16)
+                        
+                        Text(HomeModel.userLocation == nil ? "" : "")
+                            .foregroundColor(.black)
+                        
+                        Text(HomeModel.userAddress)
+                            .font(.caption)
+                            .fontWeight(.heavy)
+                            .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 0.23921568627450981, green: 0.2196078431372549, blue: 0.2196078431372549, opacity: 0.5)/*@END_MENU_TOKEN@*/)
+                            .padding(.trailing, 50)
+                        
+                        Spacer(minLength: 0)
+                    }
                 }
+                
                 .padding([.horizontal, .top])
+                .padding(.bottom, 10)
                 
-                Divider()
+                Text("Menu")
+                    .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 1.0, green: 0.0, blue: 0.212)/*@END_MENU_TOKEN@*/)
+                    .padding(.trailing, 280)
+                    .padding(.bottom, 10)
+                    .fontWeight(.bold)
+                    .font(.title)
                 
-                HStack(spacing: 15){
+                HStack(){
                     
-                    TextField("Search", text: $HomeModel.search)
+                    TextField("Search for a food item", text: $HomeModel.search)
+                        .frame(maxWidth: .infinity, maxHeight: 40)
+                        .padding(.leading, 25)
+                        .background(.white)
+                        .cornerRadius(50)
+                    
+                    
                     
                     if HomeModel.search != "" {
                         
                         Button(action: {}, label: {
+                            
                             Image(systemName: "magnifyingglass")
-                                .font(.title2)
+                                .resizable()
+                                .frame(maxWidth: 20, maxHeight: 20)
                                 .foregroundColor(.gray)
+                            
                         })
                         .animation(Animation.easeIn, value: animationAmount)
                     }
                 }
                 .padding(.horizontal)
-                .padding(.top, 10)
+                .padding(.leading, 20)
+                .padding(.trailing, 20)
+                .padding(.bottom, 10)
                 
-                Divider()
+                ScrollView(.vertical) {
+                    
+                    Text("Categories")
+                        .foregroundColor(Color(red: 0.23921568627450981, green: 0.2196078431372549, blue: 0.2196078431372549))
+                        .padding(.trailing, 240)
+                        .fontWeight(.bold)
+                        .font(.title2)
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                                                
+                        HStack {
+                            Button(action: {}, label: {
+                                Image("breakfastOff")
+                            })
+                            Button(action: {}, label: {
+                                Image("nachosOff")
+                            })
+                            Button(action: {}, label: {
+                                Image("tacoOff")
+                            })
+                            Button(action: {}, label: {
+                                Image("nachosOff")
+                            })
+                            Button(action: {}, label: {
+                                Image("platosOff")
+                            })
+                            Button(action: {}, label: {
+                                Image("soupsOff")
+                            })
+                            Button(action: {}, label: {
+                                Image("saladsOff")
+                            })
+                            Button(action: {}, label: {
+                                Image("drinksOff")
+                            })
+                            Button(action: {}, label: {
+                                Image("cocktailsOff")
+                            })
+
+                        }
+                        .padding(.trailing, 20)
+                        .padding(.leading, 20)
+                        
+                    }
+                    
+                    Text("Breakfast")
+                        .foregroundColor(Color(red: 0.23921568627450981, green: 0.2196078431372549, blue: 0.2196078431372549))
+                        .padding(.trailing, 250)
+                        .fontWeight(.bold)
+                        .font(.title2)
+                    
+                    
+                    HStack {
+                        
+                        HStack {
+                            
+                            VStack (alignment: .leading){
+                                Text("Hueva burger")
+                                    .font(.caption)
+                                    .fontWeight(.bold)
+                                    .padding(.bottom, 1)
+                                    .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 0.23921568627450981, green: 0.2196078431372549, blue: 0.2196078431372549)/*@END_MENU_TOKEN@*/)
+                                    
+                                Text("Patty, salad, pickles, buns, onions, mustard")
+                                    .frame(width: 120)
+                                    .font(.caption)
+                                    .foregroundColor(Color(red: 0.6588235294117647, green: 0.6588235294117647, blue: 0.6588235294117647))
+                                    .multilineTextAlignment(.leading)
+                                    .lineLimit(3)
+                                    .padding(.bottom, 1)
+
+
+                                Text("$12")
+                                    .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 0.23921568627450981, green: 0.2196078431372549, blue: 0.2196078431372549)/*@END_MENU_TOKEN@*/)
+                                    .fontWeight(.bold)
+                                    
+                           
+                            }
+                            .padding(20)
+                            
+                            
+                            Spacer()
+                            
+                            VStack {
+                                Button(action: {}, label: {
+                                    Image("addCart")
+                                })
+                                
+                                Spacer()
+                            }
+                            .padding(.top, 20)
+                            .padding(.trailing, 10)
+                            
+                        }
+                        .background(.white)
+                        .cornerRadius(20)
+                        .shadow(radius: 5)
+                        
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.leading, 30)
+                    .padding(.trailing, 30)
+                    
+                    
+                    
+                    
+                    Spacer()
+                    
+                }
                 
-                Spacer()
+                
+                HStack {
+                    Button(action: {}, label: {
+                        Text("-")
+                    })
+                        .opacity(0)
+                    
+                    
+                    Spacer()
+                    
+                    
+                    Button(action: {}, label: {
+                        
+                        Image("cartButton")
+                        
+                    })
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.trailing, 30)
+                
+                
             }
             
             // Side menu
@@ -92,6 +251,7 @@ struct Home: View {
                     .background(Color.black.opacity(0.3).ignoresSafeArea())
             }
         }
+        
         .onAppear(perform: {
             
             // calling locatin delegate
@@ -100,5 +260,6 @@ struct Home: View {
             // calling getAllDishes service
             HomeModel.getDishes()
         })
+        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(red: 0.9607843137254902, green: 0.9607843137254902, blue: 0.9607843137254902)/*@END_MENU_TOKEN@*/)
     }
 }
