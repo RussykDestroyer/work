@@ -42,6 +42,7 @@ struct CustomNavBarView: View {
             .font(.headline)
             .frame(maxWidth: .infinity)
             .padding(.horizontal, 25)
+            .background(Color(hexStringToUIColor(hex: "#F5F5F5")).ignoresSafeArea())
         }
     }
 }

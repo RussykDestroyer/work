@@ -15,34 +15,11 @@ struct CartView: View{
     var body: some View{
             ZStack{
                 VStack{
-                    HStack{
-                        NavigationLink(destination: Home()){
-                                Image(systemName: "chevron.left")
-                                    .foregroundColor(Color(hexStringToUIColor(hex: "#00000080")))
-                                
-                            .frame(alignment: .leading)
-                            .padding()
-                        }
-                        
-                        
-                        Text("Shopping Cart")
-                            .frame(maxWidth: .infinity, alignment: .center)
-                        
-                        Button(action: {}, label: {
-                            Image(systemName: "arrow.left")
-                        })
-                        .frame(alignment: .leading)
-                        .padding()
-                        .opacity(0)
-                        
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal, 25)
                     
-                    Divider()
-                        .frame(height:0.6)
-                        .overlay(.gray)
-                        .padding(.horizontal, 25)
+//                    Divider()
+//                        .frame(height:0.6)
+//                        .overlay(.gray)
+//                        .padding(.horizontal, 25)
                     
                     Toggle(isOn: $CartVM.pickingUp){
                         Text("Picking up")
@@ -97,7 +74,6 @@ struct CartView: View{
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 30)
                     .padding(.vertical, 20)
-                    .background(Color(hexStringToUIColor(hex: "#F5F5F5")))
                     
                     
                     ScrollView(.vertical){
@@ -106,7 +82,7 @@ struct CartView: View{
                                 ForEach(CartVM.cartItems, id: \.id){cartItem in
                                     HStack{
                                         VStack(spacing: 0) {
-                                            Button(action: {}, label: {
+                                            Button(action: {CartVM.IncrementCartItem(id: cartItem.dish.id)}, label: {
                                                 Image(systemName: "plus")
                                                     .foregroundColor(Color(hexStringToUIColor(hex: "#CDCDCD")))
                                             })
@@ -126,7 +102,7 @@ struct CartView: View{
                                             //                                .frame(width: 60, height: 0.8)
                                             //                                .overlay(.gray)
                                             
-                                            Button(action: {}, label: {
+                                            Button(action: {CartVM.DecrementCartItem(id: cartItem.dish.id)}, label: {
                                                 Image(systemName: "minus")
                                                     .foregroundColor(Color(hexStringToUIColor(hex: "#CDCDCD")))
                                             })
