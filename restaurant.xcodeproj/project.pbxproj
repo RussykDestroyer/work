@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		596CFC1E2925429D008263F0 /* tacoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596CFC1D2925429D008263F0 /* tacoView.swift */; };
 		596CFC212925435F008263F0 /* SlidingTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 596CFC202925435F008263F0 /* SlidingTabView */; };
 		59C8FC6E2922EC5400A0AAF6 /* restaurantApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C8FC6D2922EC5400A0AAF6 /* restaurantApp.swift */; };
 		59C8FC702922EC5400A0AAF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C8FC6F2922EC5400A0AAF6 /* ContentView.swift */; };
@@ -25,7 +24,6 @@
 
 /* Begin PBXFileReference section */
 		59403FBA29246E1F003FAA2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		596CFC1D2925429D008263F0 /* tacoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tacoView.swift; sourceTree = "<group>"; };
 		59C8FC6A2922EC5400A0AAF6 /* restaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = restaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59C8FC6D2922EC5400A0AAF6 /* restaurantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurantApp.swift; sourceTree = "<group>"; };
 		59C8FC6F2922EC5400A0AAF6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 				ACDD47162924C7550006ED5F /* Sidebar.swift */,
 				ACDD471D29250DD40006ED5F /* Login.swift */,
 				ACDD471F29250E1D0006ED5F /* Registration.swift */,
-				596CFC1D2925429D008263F0 /* tacoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,7 +213,6 @@
 				ACDD47192924EE9A0006ED5F /* LoginViewModel.swift in Sources */,
 				ACDD472029250E1D0006ED5F /* Registration.swift in Sources */,
 				ACDD471C2924F9ED0006ED5F /* AuthorizationService.swift in Sources */,
-				596CFC1E2925429D008263F0 /* tacoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

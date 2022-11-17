@@ -29,7 +29,7 @@ struct Home: View {
                         Image("menuButton")
                             .resizable()
                             .frame(width: 35, height: 35)
-                            
+                        
                     })
                     
                     HStack {
@@ -51,14 +51,14 @@ struct Home: View {
                 }
                 
                 .padding([.horizontal, .top])
-                .padding(.bottom, 15)
+                .padding(.bottom, 10)
                 
                 Text("Menu")
-                    .padding(.trailing, 250)
-                    .padding(.bottom, 15)
+                    .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 1.0, green: 0.0, blue: 0.212)/*@END_MENU_TOKEN@*/)
+                    .padding(.trailing, 280)
+                    .padding(.bottom, 10)
                     .fontWeight(.bold)
                     .font(.title)
-                    .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 1.0, green: 0.0, blue: 0.0)/*@END_MENU_TOKEN@*/)
                 
                 HStack(){
                     
@@ -68,17 +68,17 @@ struct Home: View {
                         .background(.white)
                         .cornerRadius(50)
                     
-                        
-
+                    
+                    
                     if HomeModel.search != "" {
-
+                        
                         Button(action: {}, label: {
                             
                             Image(systemName: "magnifyingglass")
                                 .resizable()
                                 .frame(maxWidth: 20, maxHeight: 20)
                                 .foregroundColor(.gray)
-                    
+                            
                         })
                         .animation(Animation.easeIn, value: animationAmount)
                     }
@@ -86,18 +86,85 @@ struct Home: View {
                 .padding(.horizontal)
                 .padding(.leading, 20)
                 .padding(.trailing, 20)
+                .padding(.bottom, 10)
                 
-                
-                SlidingTabView(selection: $tabIndex, tabs: ["Nachos", "Nachos Texanos", "a", "b", "c"], animation: .easeInOut)
+                ScrollView(.vertical) {
                     
-                
+                    Text("Categories")
+                        .foregroundColor(Color(red: 0.23921568627450981, green: 0.2196078431372549, blue: 0.2196078431372549))
+                        .padding(.trailing, 240)
+                        .fontWeight(.bold)
+                        .font(.title2)
                     
-                
-                
+                    ScrollView(.horizontal, showsIndicators: false) {
+                                                
+                        HStack {
+                            Button(action: {}, label: {
+                                Image("breakfastOff")
+                            })
+                            Button(action: {}, label: {
+                                Image("nachosOff")
+                            })
+                            Button(action: {}, label: {
+                                Image("tacoOff")
+                            })
+                            Button(action: {}, label: {
+                                Image("nachosOff")
+                            })
+                            Button(action: {}, label: {
+                                Image("platosOff")
+                            })
+                            Button(action: {}, label: {
+                                Image("soupsOff")
+                            })
+                            Button(action: {}, label: {
+                                Image("saladsOff")
+                            })
+                            Button(action: {}, label: {
+                                Image("drinksOff")
+                            })
+                            Button(action: {}, label: {
+                                Image("cocktailsOff")
+                            })
 
-                Spacer()
-              }
-                     
+                        }
+                        .padding(.trailing, 20)
+                        .padding(.leading, 20)
+                        
+                    }
+                    
+                    Text("Breakfast")
+                        .foregroundColor(Color(red: 0.23921568627450981, green: 0.2196078431372549, blue: 0.2196078431372549))
+                        .padding(.trailing, 250)
+                        .fontWeight(.bold)
+                        .font(.title2)
+                    
+                    Spacer()
+                    
+                }
+                
+                
+                HStack {
+                    Button(action: {}, label: {
+                        Text("-")
+                    })
+                        .opacity(0)
+                    
+                    
+                    Spacer()
+                    
+                    
+                    Button(action: {}, label: {
+                        
+                        Image("cartButton")
+                        
+                    })
+                }
+                .frame(maxWidth: .infinity)
+                .padding(.trailing, 30)
+                
+                
+            }
             
             // Side menu
             
