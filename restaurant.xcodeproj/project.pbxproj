@@ -20,6 +20,14 @@
 		ACDD471E29250DD40006ED5F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD471D29250DD40006ED5F /* Login.swift */; };
 		ACDD472029250E1D0006ED5F /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD471F29250E1D0006ED5F /* Registration.swift */; };
 		ACDD47242925288B0006ED5F /* MenuWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD47232925288B0006ED5F /* MenuWebService.swift */; };
+		ACDD4726292551190006ED5F /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD4725292551190006ED5F /* Cart.swift */; };
+		ACDD47292925745B0006ED5F /* HexToUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD47282925745B0006ED5F /* HexToUIColor.swift */; };
+		ACDD472C29262E8D0006ED5F /* AppNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD472B29262E8D0006ED5F /* AppNavBarView.swift */; };
+		ACDD472E29262FE10006ED5F /* CustomNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD472D29262FE10006ED5F /* CustomNavBarView.swift */; };
+		ACDD4730292639550006ED5F /* CustomNavBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD472F292639550006ED5F /* CustomNavBarContainerView.swift */; };
+		ACDD473229263BF40006ED5F /* CustomNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD473129263BF40006ED5F /* CustomNavView.swift */; };
+		ACDD473429263D640006ED5F /* CustomNavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD473329263D640006ED5F /* CustomNavLink.swift */; };
+		ACDD4736292642050006ED5F /* CustomNavBarPreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD4735292642050006ED5F /* CustomNavBarPreferenceKeys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +46,14 @@
 		ACDD471D29250DD40006ED5F /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		ACDD471F29250E1D0006ED5F /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		ACDD47232925288B0006ED5F /* MenuWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuWebService.swift; sourceTree = "<group>"; };
+		ACDD4725292551190006ED5F /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		ACDD47282925745B0006ED5F /* HexToUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexToUIColor.swift; sourceTree = "<group>"; };
+		ACDD472B29262E8D0006ED5F /* AppNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavBarView.swift; sourceTree = "<group>"; };
+		ACDD472D29262FE10006ED5F /* CustomNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarView.swift; sourceTree = "<group>"; };
+		ACDD472F292639550006ED5F /* CustomNavBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarContainerView.swift; sourceTree = "<group>"; };
+		ACDD473129263BF40006ED5F /* CustomNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavView.swift; sourceTree = "<group>"; };
+		ACDD473329263D640006ED5F /* CustomNavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavLink.swift; sourceTree = "<group>"; };
+		ACDD4735292642050006ED5F /* CustomNavBarPreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarPreferenceKeys.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +86,8 @@
 		59C8FC6C2922EC5400A0AAF6 /* restaurant */ = {
 			isa = PBXGroup;
 			children = (
+				ACDD472A29262E6D0006ED5F /* CustomNavBar */,
+				ACDD47272925743D0006ED5F /* Extensions */,
 				ACDD471A2924F9CC0006ED5F /* WebServices */,
 				ACDD47112924AC500006ED5F /* ViewModels */,
 				ACDD47102924AC360006ED5F /* Views */,
@@ -106,6 +124,7 @@
 				ACDD47162924C7550006ED5F /* Sidebar.swift */,
 				ACDD471D29250DD40006ED5F /* Login.swift */,
 				ACDD471F29250E1D0006ED5F /* Registration.swift */,
+				ACDD4725292551190006ED5F /* Cart.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -126,6 +145,27 @@
 				ACDD47232925288B0006ED5F /* MenuWebService.swift */,
 			);
 			path = WebServices;
+			sourceTree = "<group>";
+		};
+		ACDD47272925743D0006ED5F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ACDD47282925745B0006ED5F /* HexToUIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ACDD472A29262E6D0006ED5F /* CustomNavBar */ = {
+			isa = PBXGroup;
+			children = (
+				ACDD472B29262E8D0006ED5F /* AppNavBarView.swift */,
+				ACDD473129263BF40006ED5F /* CustomNavView.swift */,
+				ACDD472D29262FE10006ED5F /* CustomNavBarView.swift */,
+				ACDD472F292639550006ED5F /* CustomNavBarContainerView.swift */,
+				ACDD473329263D640006ED5F /* CustomNavLink.swift */,
+				ACDD4735292642050006ED5F /* CustomNavBarPreferenceKeys.swift */,
+			);
+			path = CustomNavBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,15 +238,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACDD4736292642050006ED5F /* CustomNavBarPreferenceKeys.swift in Sources */,
 				ACDD47242925288B0006ED5F /* MenuWebService.swift in Sources */,
 				ACDD470F29249AEB0006ED5F /* Menu.swift in Sources */,
+				ACDD472C29262E8D0006ED5F /* AppNavBarView.swift in Sources */,
 				59C8FC702922EC5400A0AAF6 /* ContentView.swift in Sources */,
 				ACDD47132924AD630006ED5F /* Home.swift in Sources */,
 				ACDD47152924B1BD0006ED5F /* HomeViewModel.swift in Sources */,
+				ACDD473229263BF40006ED5F /* CustomNavView.swift in Sources */,
 				ACDD47172924C7550006ED5F /* Sidebar.swift in Sources */,
+				ACDD47292925745B0006ED5F /* HexToUIColor.swift in Sources */,
 				59C8FC6E2922EC5400A0AAF6 /* restaurantApp.swift in Sources */,
+				ACDD473429263D640006ED5F /* CustomNavLink.swift in Sources */,
+				ACDD472E29262FE10006ED5F /* CustomNavBarView.swift in Sources */,
+				ACDD4726292551190006ED5F /* Cart.swift in Sources */,
 				ACDD471E29250DD40006ED5F /* Login.swift in Sources */,
 				ACDD47192924EE9A0006ED5F /* LoginViewModel.swift in Sources */,
+				ACDD4730292639550006ED5F /* CustomNavBarContainerView.swift in Sources */,
 				ACDD472029250E1D0006ED5F /* Registration.swift in Sources */,
 				ACDD471C2924F9ED0006ED5F /* AuthorizationService.swift in Sources */,
 			);

@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         
         if currentPage > totalPages {
-            Home()
+            CartView()
         }
         else {
             OnboardingScreen()
@@ -181,8 +181,6 @@ struct ScreenView: View {
         }
     }
 }
-
-
 
 //Home
 //struct Home: View {
