@@ -12,21 +12,44 @@ struct Sidebar: View {
     var body: some View{
         
         VStack {
+            
             Button(action: {}, label: {
-                
-                HStack(spacing: 15){
-                    
-                    Image(systemName: "cart")
+                HStack(){
+                    Image(systemName: "book")
                         .font(.title)
-                        .foregroundColor(Color.pink)
-                    
-                    Text("Cart")
+                        .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 1.0, green: 0.0, blue: 0.212)/*@END_MENU_TOKEN@*/)
+                    Text("Menu")
                         .fontWeight(.bold)
                         .foregroundColor(.black)
-                    
-                    Spacer(minLength: 0)
                 }
-                .padding()
+            })
+            .padding(.bottom, 10)
+            .padding(.trailing, 60)
+            
+            Button(action: {}, label: {
+                HStack(){
+                    Image(systemName: "bookmark")
+                        .font(.title)
+                        .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 1.0, green: 0.0, blue: 0.212)/*@END_MENU_TOKEN@*/)
+                    Text("Favourite")
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .padding(.leading, 5)
+                }
+            })
+            .padding(.trailing, 25)
+            .padding(.bottom, 10)
+            
+            Button(action: {}, label: {
+                HStack(){
+                    Image(systemName: "clock")
+                        .font(.title)
+                        .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 1.0, green: 0.0, blue: 0.212)/*@END_MENU_TOKEN@*/)
+                    Text("Order history")
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                }
+                .padding(.leading, 5)
             })
             
             Spacer()

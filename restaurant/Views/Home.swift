@@ -139,6 +139,61 @@ struct Home: View {
                         .fontWeight(.bold)
                         .font(.title2)
                     
+                    
+                    HStack {
+                        
+                        HStack {
+                            
+                            VStack (alignment: .leading){
+                                Text("Hueva burger")
+                                    .font(.caption)
+                                    .fontWeight(.bold)
+                                    .padding(.bottom, 1)
+                                    .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 0.23921568627450981, green: 0.2196078431372549, blue: 0.2196078431372549)/*@END_MENU_TOKEN@*/)
+                                    
+                                Text("Patty, salad, pickles, buns, onions, mustard")
+                                    .frame(width: 120)
+                                    .font(.caption)
+                                    .foregroundColor(Color(red: 0.6588235294117647, green: 0.6588235294117647, blue: 0.6588235294117647))
+                                    .multilineTextAlignment(.leading)
+                                    .lineLimit(3)
+                                    .padding(.bottom, 1)
+
+
+                                Text("$12")
+                                    .foregroundColor(/*@START_MENU_TOKEN@*/Color(red: 0.23921568627450981, green: 0.2196078431372549, blue: 0.2196078431372549)/*@END_MENU_TOKEN@*/)
+                                    .fontWeight(.bold)
+                                    
+                           
+                            }
+                            .padding(20)
+                            
+                            
+                            Spacer()
+                            
+                            VStack {
+                                Button(action: {}, label: {
+                                    Image("addCart")
+                                })
+                                
+                                Spacer()
+                            }
+                            .padding(.top, 20)
+                            .padding(.trailing, 10)
+                            
+                        }
+                        .background(.white)
+                        .cornerRadius(20)
+                        .shadow(radius: 5)
+                        
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(.leading, 30)
+                    .padding(.trailing, 30)
+                    
+                    
+                    
+                    
                     Spacer()
                     
                 }
