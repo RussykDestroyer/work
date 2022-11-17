@@ -10,6 +10,8 @@ import CoreLocation
 
 
 class HomeViewModel: NSObject, ObservableObject, CLLocationManagerDelegate{
+    @Published var dishes = [Dish]()
+    @Published var cartItems = [CartItem]()
     
     @Published var locationManager = CLLocationManager()
     @Published var search = ""
@@ -21,6 +23,44 @@ class HomeViewModel: NSObject, ObservableObject, CLLocationManagerDelegate{
     
     // Sidebar...
     @Published var showMenu = false
+    
+    func getDishes(){
+        MenuWebService().getAllDishes(){ result in
+            switch result{
+            case .success(let dishes):
+                DispatchQueue.main.async {
+                    self.dishes = dishes
+                }
+            case .failure(let error):
+                //self.loginAlert = true
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func IncrementCartItem(id :Int){
+        let defaults = UserDefaults.standard
+        guard let token = defaults.string(forKey: "jsonwebtoken") else {
+            return
+        }
+        
+        CartWebService().IncrementCartItem(token:token, id:id){ result in
+            switch result{
+            case .success(let cartItem):
+                DispatchQueue.main.async {
+                    if let idx = self.cartItems.firstIndex(where: { $0.id == cartItem.id }) {
+                        self.cartItems[idx] = cartItem
+                    }
+                    else{
+                        self.cartItems.append(cartItem)
+                    }
+                }
+            case .failure(let error):
+                //self.loginAlert = true
+                print(error.localizedDescription)
+            }
+        }
+    }
     
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager){

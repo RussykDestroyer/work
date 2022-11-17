@@ -8,59 +8,62 @@
 import Foundation
 
 
-struct Menus: Codable {
-    let menus: [MenuItem]
+struct Dishes: Codable {
+    let dishes: [Dish]
     
     enum CodingKeys: String, CodingKey {
-        case menus = "data"
+        case dishes = "data"
     }
 }
 
-struct MenuItem: Codable {
-    var id, itemName, description, price : String
-    let itemImage: ItemImage?
+struct Dish: Codable {
+    var id: Int
+    var name: String
+    var price, weight: Float
+    var photo: String?
+    //let itemImage: ItemImage?
     
     enum CodingKeys: String, CodingKey {
-        case id = "_id"
-        case itemName, description, itemImage, price
+        case id, name, price, weight, photo
     }
     
     init() {
-        itemName = ""
-        description = ""
-        price = ""
-        id = ""
-        itemImage = ItemImage()
-    }
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(String.self, forKey: .id)
-        description = try container.decode(String.self, forKey: .description)
-        itemName = try container.decode(String.self, forKey: .itemName)
-        itemImage = try container.decodeIfPresent(ItemImage.self, forKey: .itemImage)
-        price = try container.decode(String.self, forKey: .price)
-    }
-}
-
-struct ItemImage: Codable {
-    let url, alt, name: String?
-    
-    enum CodingKeys: String, CodingKey {
-        case url, alt, name
-    }
-    
-    init() {
-        url = ""
-        alt = ""
+        id = 0
         name = ""
+        price = 0
+        weight = 0
+        photo = ""
+        //itemImage = ItemImage()
     }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        url = try container.decodeIfPresent(String.self, forKey: .url)
-        alt = try container.decodeIfPresent(String.self, forKey: .alt)
-        name = try container.decodeIfPresent(String.self, forKey: .name)
-
+        id = try container.decode(Int.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        photo = try container.decodeIfPresent(String.self, forKey: .photo)
+        weight = try container.decode(Float.self, forKey: .weight)
+        price = try container.decode(Float.self, forKey: .price)
     }
 }
+
+//struct ItemImage: Codable {
+//    let url, alt, name: String?
+//
+//    enum CodingKeys: String, CodingKey {
+//        case url, alt, name
+//    }
+//
+//    init() {
+//        url = ""
+//        alt = ""
+//        name = ""
+//    }
+//
+//    init(from decoder: Decoder) throws {
+//        let container = try decoder.container(keyedBy: CodingKeys.self)
+//        url = try container.decodeIfPresent(String.self, forKey: .url)
+//        alt = try container.decodeIfPresent(String.self, forKey: .alt)
+//        name = try container.decodeIfPresent(String.self, forKey: .name)
+//
+//    }
+//}

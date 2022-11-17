@@ -8,13 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    func isAuthenticated() -> Bool{
+        let defaults = UserDefaults.standard
+        guard let _ = defaults.string(forKey: "jsonwebtoken") else {
+            return false
+        }
+        return true
+    }
     
     @AppStorage("currentPage") var currentPage = 1
                 
     var body: some View {
         
         if currentPage > totalPages {
-            signIn()
+            if self.isAuthenticated() {
+                Home()
+            }
+            else {
+                signIn()
+            }
         }
         else {
             OnboardingScreen()
@@ -182,8 +194,6 @@ struct ScreenView: View {
     }
 }
 
-
-
 //Home
 //struct Home: View {
 //    var body: some View {
@@ -266,12 +276,12 @@ struct Menu: View {
     }
 }
 
-//Cart
-struct Cart: View {
-    var body: some View {
-        Text("fff")
-    }
-}
+////Cart
+//struct Cart: View {
+//    var body: some View {
+//        Text("fff")
+//    }
+//}
 
 //MyProfile
 struct MyProfile: View {
