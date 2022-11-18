@@ -10,6 +10,7 @@ import SlidingTabView
 
 struct Home: View {
     
+    @State private var numb = 0
     @State private var tabIndex = 0
     
     @StateObject var HomeModel = HomeViewModel()
@@ -174,7 +175,10 @@ struct Home: View {
                                     Spacer()
                                     
                                     VStack {
-                                        Button(action: {HomeModel.IncrementCartItem(id: dish.id)}, label: {
+                                        Button(action: {
+                                            HomeModel.IncrementCartItem(id: dish.id)
+                                            numb = numb + 1
+                                        }, label: {
                                             Image("addCart")
                                         })
                                         
@@ -217,12 +221,11 @@ struct Home: View {
                             CartView()
                             .customNavigationTitle("Shopping Cart")
                         ){
-                            Image("cartButton")
+                            cartButton(numberOfProducts: numb)
                         }
                         
                     }
                     .frame(maxWidth: .infinity)
-                    .background(.opacity(0))
                     .padding(.trailing, 30)
                     
                     

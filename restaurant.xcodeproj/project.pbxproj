@@ -12,6 +12,8 @@
 		59C8FC702922EC5400A0AAF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C8FC6F2922EC5400A0AAF6 /* ContentView.swift */; };
 		59C8FC722922EC5500A0AAF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59C8FC712922EC5500A0AAF6 /* Assets.xcassets */; };
 		59C8FC752922EC5500A0AAF6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59C8FC742922EC5500A0AAF6 /* Preview Assets.xcassets */; };
+		59F4DCB92927E54100DCBBA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59F4DCB82927E54000DCBBA3 /* LaunchScreen.storyboard */; };
+		59F4DCBC2927EA9500DCBBA3 /* cartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F4DCBB2927EA9500DCBBA3 /* cartButton.swift */; };
 		ACB6B6152927975F001677D7 /* CheckoutIntentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6B6142927975F001677D7 /* CheckoutIntentResponse.swift */; };
 		ACB6B617292798A6001677D7 /* PaymentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6B616292798A6001677D7 /* PaymentConfig.swift */; };
 		ACB6B61D2927B33E001677D7 /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = ACB6B61C2927B33E001677D7 /* Stripe */; };
@@ -47,6 +49,8 @@
 		59C8FC6F2922EC5400A0AAF6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		59C8FC712922EC5500A0AAF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59C8FC742922EC5500A0AAF6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		59F4DCB82927E54000DCBBA3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		59F4DCBB2927EA9500DCBBA3 /* cartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cartButton.swift; sourceTree = "<group>"; };
 		ACB6B6142927975F001677D7 /* CheckoutIntentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutIntentResponse.swift; sourceTree = "<group>"; };
 		ACB6B616292798A6001677D7 /* PaymentConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfig.swift; sourceTree = "<group>"; };
 		ACB6B61E2927C020001677D7 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 		59C8FC6C2922EC5400A0AAF6 /* restaurant */ = {
 			isa = PBXGroup;
 			children = (
+				59F4DCBA2927EA8100DCBBA3 /* Components */,
 				ACDD472A29262E6D0006ED5F /* CustomNavBar */,
 				ACDD47272925743D0006ED5F /* Extensions */,
 				ACDD471A2924F9CC0006ED5F /* WebServices */,
@@ -120,6 +125,7 @@
 				59C8FC6F2922EC5400A0AAF6 /* ContentView.swift */,
 				59C8FC712922EC5500A0AAF6 /* Assets.xcassets */,
 				59C8FC732922EC5500A0AAF6 /* Preview Content */,
+				59F4DCB82927E54000DCBBA3 /* LaunchScreen.storyboard */,
 			);
 			path = restaurant;
 			sourceTree = "<group>";
@@ -130,6 +136,14 @@
 				59C8FC742922EC5500A0AAF6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		59F4DCBA2927EA8100DCBBA3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				59F4DCBB2927EA9500DCBBA3 /* cartButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		ACB6B61B2927B33E001677D7 /* Frameworks */ = {
@@ -270,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59F4DCB92927E54100DCBBA3 /* LaunchScreen.storyboard in Resources */,
 				59C8FC752922EC5500A0AAF6 /* Preview Assets.xcassets in Resources */,
 				59C8FC722922EC5500A0AAF6 /* Assets.xcassets in Resources */,
 			);
@@ -291,6 +306,7 @@
 				ACDD47132924AD630006ED5F /* Home.swift in Sources */,
 				ACDD47152924B1BD0006ED5F /* HomeViewModel.swift in Sources */,
 				ACDD4738292661C00006ED5F /* CartModel.swift in Sources */,
+				59F4DCBC2927EA9500DCBBA3 /* cartButton.swift in Sources */,
 				ACDD473A292663590006ED5F /* CartWebService.swift in Sources */,
 				ACDD473229263BF40006ED5F /* CustomNavView.swift in Sources */,
 				ACB6B617292798A6001677D7 /* PaymentConfig.swift in Sources */,
@@ -440,8 +456,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = restaurant/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please Allow To Read Localtion For Delivery";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -468,8 +486,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = restaurant/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please Allow To Read Localtion For Delivery";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
