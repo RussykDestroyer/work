@@ -12,14 +12,17 @@ import SwiftUI
 struct CartView: View{
     @StateObject var CartVM = CartViewModel()
     
+    
     var body: some View{
+        NavigationView{
+            
             ZStack{
                 VStack{
                     
-//                    Divider()
-//                        .frame(height:0.6)
-//                        .overlay(.gray)
-//                        .padding(.horizontal, 25)
+                    //                    Divider()
+                    //                        .frame(height:0.6)
+                    //                        .overlay(.gray)
+                    //                        .padding(.horizontal, 25)
                     
                     Toggle(isOn: $CartVM.pickingUp){
                         Text("Picking up")
@@ -255,35 +258,47 @@ struct CartView: View{
                 
             })
         }
+        }
 }
 
 struct ConfirmationButton: View{
     
     private var total_price: Float = 0
+    @StateObject private var CartVM = CartViewModel()
     
     init(total_price: Float){
         self.total_price = total_price
     }
     var body: some View{
-        VStack(alignment: .leading, spacing: 15) {
-            Button(action: {}, label: {
-                HStack(spacing: 0, content: {
-                    Text("Place on Order: ")
-                        .font(.system(size: 15))
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(hexStringToUIColor(hex: "#3D3838")))
-                    Text("$" + String(format: "%.2f", self.total_price))
-                        .font(.system(size: 15))
-                        .fontWeight(.bold)
-                        .foregroundColor(Color(hexStringToUIColor(hex: "#FF0036")))
+            VStack(alignment: .leading, spacing: 15) {
+                NavigationLink(destination: CheckoutView(), isActive: $CartVM.isActive, label: {
+                    Button(action: {
+                        CartVM.startCheckout{ clientSecret in
+                            
+                            PaymentConfig.shared.paymentIntentClientSecret = clientSecret
+                            DispatchQueue.main.async {
+                                CartVM.isActive = true
+                            }
+                        }
+                    }, label: {
+                        HStack(spacing: 0, content: {
+                            Text("Checkout ")
+                                .font(.system(size: 15))
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(hexStringToUIColor(hex: "#3D3838")))
+                            Text("$" + String(format: "%.2f", self.total_price))
+                                .font(.system(size: 15))
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(hexStringToUIColor(hex: "#FF0036")))
+                        })
+                    })
+                    .frame(maxWidth: .infinity, maxHeight: 50)
+                    .background(Color(hexStringToUIColor(hex: "FFD9E1")))
+                    .cornerRadius(25)
                 })
-            })
-            .frame(maxWidth: .infinity, maxHeight: 50)
-            .background(Color(hexStringToUIColor(hex: "FFD9E1")))
-            .cornerRadius(25)
-        }
-        .frame(minWidth: 300, alignment: .bottom)
-        .padding(25)
+            }
+            .frame(minWidth: 300, alignment: .bottom)
+            .padding(25)
     }
 }
 

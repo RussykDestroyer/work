@@ -1,14 +1,25 @@
 {
-  "pins" : [
-    {
-      "identity" : "slidingtabview",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/QuynhNguyen/SlidingTabView",
-      "state" : {
-        "revision" : "b0f0662977418824d50546b2850a523dcd793bb0",
-        "version" : "1.0.2"
+  "object": {
+    "pins": [
+      {
+        "package": "SlidingTabView",
+        "repositoryURL": "https://github.com/QuynhNguyen/SlidingTabView",
+        "state": {
+          "branch": null,
+          "revision": "b0f0662977418824d50546b2850a523dcd793bb0",
+          "version": "1.0.2"
+        }
+      },
+      {
+        "package": "Stripe",
+        "repositoryURL": "https://github.com/stripe/stripe-ios.git",
+        "state": {
+          "branch": "master",
+          "revision": "1b5e70ac1b2ee5f3528a85b9a024c835aa138be0",
+          "version": null
+        }
       }
-    }
-  ],
-  "version" : 2
+    ]
+  },
+  "version": 1
 }

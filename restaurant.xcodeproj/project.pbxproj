@@ -12,6 +12,12 @@
 		59C8FC702922EC5400A0AAF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C8FC6F2922EC5400A0AAF6 /* ContentView.swift */; };
 		59C8FC722922EC5500A0AAF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59C8FC712922EC5500A0AAF6 /* Assets.xcassets */; };
 		59C8FC752922EC5500A0AAF6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59C8FC742922EC5500A0AAF6 /* Preview Assets.xcassets */; };
+		ACB6B6152927975F001677D7 /* CheckoutIntentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6B6142927975F001677D7 /* CheckoutIntentResponse.swift */; };
+		ACB6B617292798A6001677D7 /* PaymentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6B616292798A6001677D7 /* PaymentConfig.swift */; };
+		ACB6B61D2927B33E001677D7 /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = ACB6B61C2927B33E001677D7 /* Stripe */; };
+		ACB6B61F2927C020001677D7 /* CheckoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6B61E2927C020001677D7 /* CheckoutView.swift */; };
+		ACB6B6212927C127001677D7 /* PaymentGatewayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6B6202927C127001677D7 /* PaymentGatewayController.swift */; };
+		ACB6B6232927C70A001677D7 /* CheckoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6B6222927C70A001677D7 /* CheckoutViewModel.swift */; };
 		ACDD470F29249AEB0006ED5F /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD470E29249AEB0006ED5F /* Menu.swift */; };
 		ACDD47132924AD630006ED5F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD47122924AD630006ED5F /* Home.swift */; };
 		ACDD47152924B1BD0006ED5F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD47142924B1BD0006ED5F /* HomeViewModel.swift */; };
@@ -41,6 +47,11 @@
 		59C8FC6F2922EC5400A0AAF6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		59C8FC712922EC5500A0AAF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		59C8FC742922EC5500A0AAF6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ACB6B6142927975F001677D7 /* CheckoutIntentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutIntentResponse.swift; sourceTree = "<group>"; };
+		ACB6B616292798A6001677D7 /* PaymentConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfig.swift; sourceTree = "<group>"; };
+		ACB6B61E2927C020001677D7 /* CheckoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutView.swift; sourceTree = "<group>"; };
+		ACB6B6202927C127001677D7 /* PaymentGatewayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentGatewayController.swift; sourceTree = "<group>"; };
+		ACB6B6222927C70A001677D7 /* CheckoutViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewModel.swift; sourceTree = "<group>"; };
 		ACDD470E29249AEB0006ED5F /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		ACDD47122924AD630006ED5F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		ACDD47142924B1BD0006ED5F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -69,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				596CFC212925435F008263F0 /* SlidingTabView in Frameworks */,
+				ACB6B61D2927B33E001677D7 /* Stripe in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +92,7 @@
 			children = (
 				59C8FC6C2922EC5400A0AAF6 /* restaurant */,
 				59C8FC6B2922EC5400A0AAF6 /* Products */,
+				ACB6B61B2927B33E001677D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,7 +114,9 @@
 				ACDD47102924AC360006ED5F /* Views */,
 				ACDD470D29249AC50006ED5F /* Models */,
 				59403FBA29246E1F003FAA2D /* Info.plist */,
+				ACB6B6202927C127001677D7 /* PaymentGatewayController.swift */,
 				59C8FC6D2922EC5400A0AAF6 /* restaurantApp.swift */,
+				ACB6B616292798A6001677D7 /* PaymentConfig.swift */,
 				59C8FC6F2922EC5400A0AAF6 /* ContentView.swift */,
 				59C8FC712922EC5500A0AAF6 /* Assets.xcassets */,
 				59C8FC732922EC5500A0AAF6 /* Preview Content */,
@@ -117,11 +132,19 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		ACB6B61B2927B33E001677D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ACDD470D29249AC50006ED5F /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				ACDD470E29249AEB0006ED5F /* Menu.swift */,
 				ACDD4737292661C00006ED5F /* CartModel.swift */,
+				ACB6B6142927975F001677D7 /* CheckoutIntentResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,6 +157,7 @@
 				ACDD471D29250DD40006ED5F /* Login.swift */,
 				ACDD471F29250E1D0006ED5F /* Registration.swift */,
 				ACDD4725292551190006ED5F /* Cart.swift */,
+				ACB6B61E2927C020001677D7 /* CheckoutView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -144,6 +168,7 @@
 				ACDD47142924B1BD0006ED5F /* HomeViewModel.swift */,
 				ACDD47182924EE9A0006ED5F /* LoginViewModel.swift */,
 				ACDD473D2926644F0006ED5F /* CartViewModel.swift */,
+				ACB6B6222927C70A001677D7 /* CheckoutViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -197,6 +222,7 @@
 			name = restaurant;
 			packageProductDependencies = (
 				596CFC202925435F008263F0 /* SlidingTabView */,
+				ACB6B61C2927B33E001677D7 /* Stripe */,
 			);
 			productName = restaurant;
 			productReference = 59C8FC6A2922EC5400A0AAF6 /* restaurant.app */;
@@ -228,6 +254,7 @@
 			mainGroup = 59C8FC612922EC5400A0AAF6;
 			packageReferences = (
 				596CFC1F2925435F008263F0 /* XCRemoteSwiftPackageReference "SlidingTabView" */,
+				ACB6B61A2927ABFA001677D7 /* XCRemoteSwiftPackageReference "stripe-ios" */,
 			);
 			productRefGroup = 59C8FC6B2922EC5400A0AAF6 /* Products */;
 			projectDirPath = "";
@@ -257,6 +284,7 @@
 			files = (
 				ACDD4736292642050006ED5F /* CustomNavBarPreferenceKeys.swift in Sources */,
 				ACDD47242925288B0006ED5F /* MenuWebService.swift in Sources */,
+				ACB6B61F2927C020001677D7 /* CheckoutView.swift in Sources */,
 				ACDD470F29249AEB0006ED5F /* Menu.swift in Sources */,
 				ACDD472C29262E8D0006ED5F /* AppNavBarView.swift in Sources */,
 				59C8FC702922EC5400A0AAF6 /* ContentView.swift in Sources */,
@@ -265,10 +293,14 @@
 				ACDD4738292661C00006ED5F /* CartModel.swift in Sources */,
 				ACDD473A292663590006ED5F /* CartWebService.swift in Sources */,
 				ACDD473229263BF40006ED5F /* CustomNavView.swift in Sources */,
+				ACB6B617292798A6001677D7 /* PaymentConfig.swift in Sources */,
+				ACB6B6232927C70A001677D7 /* CheckoutViewModel.swift in Sources */,
 				ACDD473E2926644F0006ED5F /* CartViewModel.swift in Sources */,
+				ACB6B6212927C127001677D7 /* PaymentGatewayController.swift in Sources */,
 				ACDD47172924C7550006ED5F /* Sidebar.swift in Sources */,
 				ACDD47292925745B0006ED5F /* HexToUIColor.swift in Sources */,
 				59C8FC6E2922EC5400A0AAF6 /* restaurantApp.swift in Sources */,
+				ACB6B6152927975F001677D7 /* CheckoutIntentResponse.swift in Sources */,
 				ACDD473429263D640006ED5F /* CustomNavLink.swift in Sources */,
 				ACDD472E29262FE10006ED5F /* CustomNavBarView.swift in Sources */,
 				ACDD4726292551190006ED5F /* Cart.swift in Sources */,
@@ -485,6 +517,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		ACB6B61A2927ABFA001677D7 /* XCRemoteSwiftPackageReference "stripe-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stripe/stripe-ios.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -492,6 +532,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 596CFC1F2925435F008263F0 /* XCRemoteSwiftPackageReference "SlidingTabView" */;
 			productName = SlidingTabView;
+		};
+		ACB6B61C2927B33E001677D7 /* Stripe */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ACB6B61A2927ABFA001677D7 /* XCRemoteSwiftPackageReference "stripe-ios" */;
+			productName = Stripe;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
