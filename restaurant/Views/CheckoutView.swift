@@ -35,6 +35,7 @@ struct CheckoutView: View {
                     message = "Cancelled"
                 case .succeeded:
                     message = "Your payment has been successfully completed!"
+                isSuccess = true
                 CheckoutVM.confirm_order { _ in
                     print("order confirmed in database")
                 }
@@ -46,6 +47,7 @@ struct CheckoutView: View {
 
     var body: some View {
         VStack {
+            Spacer()
                 Section {
                     // Stripe Credit Card TextField Here
                     STPPaymentCardTextField.Representable.init(paymentMethodParams: $paymentMethodParams)
@@ -63,21 +65,40 @@ struct CheckoutView: View {
                 
                 Text(message)
                     .font(.headline)
+            
+            Spacer()
                 
                 
             }
             
-            NavigationLink(isActive: $isSuccess, destination: {
-                //Confirmation()
-            }, label: {
-                EmptyView()
-            })
+//            NavigationLink(isActive: $isSuccess, destination: {
+//                Home()
+//
+//            }, label: {
+////                if (isSuccess){
+////                    Button(action: {}, label: {
+////                        Text("Return to home")
+////                            .font(.system(size: 15))
+////                            .fontWeight(.bold)
+////                            .foregroundColor(.black)
+////                    })
+////                    .frame(maxWidth: .infinity)
+////                    .padding(.horizontal, 40)
+////                }
+//            })
             
             
-            .navigationTitle("Checkout")
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
             
         }
     }
+
+struct CheckoutView_Previews: PreviewProvider {
+    static var previews: some View {
+        CheckoutView()
+    }
+}
 
 
 

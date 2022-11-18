@@ -19,10 +19,10 @@ struct CartView: View{
             ZStack{
                 VStack{
                     
-                    //                    Divider()
-                    //                        .frame(height:0.6)
-                    //                        .overlay(.gray)
-                    //                        .padding(.horizontal, 25)
+//                    Divider()
+//                        .frame(height:0.6)
+//                        .overlay(.gray)
+//                        .padding(.horizontal, 25)
                     
                     Toggle(isOn: $CartVM.pickingUp){
                         Text("Picking up")
@@ -35,48 +35,48 @@ struct CartView: View{
                     .padding(.top, 15)
                     .padding(.horizontal, 30)
                     
-                    HStack( spacing: 0){
-                        
-                        VStack(alignment: .leading, spacing: 0){
-                            HStack{
-                                Image(systemName: "creditcard")
-                                    .foregroundColor(Color(hexStringToUIColor(hex: "#3D383880")))
-                                
-                                Text("Cash")
-                                    .font(.custom("SF Pro Display", size: 12))
-                                    .foregroundColor(Color(hexStringToUIColor(hex: "#3D383880")))
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(15)
-                            
-                            Divider()
-                                .frame(height:0.8)
-                                .overlay(.gray)
-                            
-                            HStack{
-                                Image(systemName: "location")
-                                    .foregroundColor(Color(hexStringToUIColor(hex: "#3D383880")))
-                                
-                                Text("Entered address")
-                                    .font(.custom("SF Pro Display", size: 12))
-                                    .foregroundColor(Color(hexStringToUIColor(hex: "#3D383880")))
-                            }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(15)
-                            
-                        }
-                        .frame(minWidth: 300)
-                        .background(.white)
-                        .cornerRadius(25)
-                        //                    .overlay(
-                        //                        RoundedRectangle(cornerRadius: 25)
-                        //                            .stroke(Color(hexStringToUIColor(hex: "#CDCDCD")), lineWidth: 1)
-                        //
-                        //                    )
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal, 30)
-                    .padding(.vertical, 20)
+//                    HStack( spacing: 0){
+//                        
+//                        VStack(alignment: .leading, spacing: 0){
+//                            HStack{
+//                                Image(systemName: "creditcard")
+//                                    .foregroundColor(Color(hexStringToUIColor(hex: "#3D383880")))
+//                                
+//                                Text("Cash")
+//                                    .font(.custom("SF Pro Display", size: 12))
+//                                    .foregroundColor(Color(hexStringToUIColor(hex: "#3D383880")))
+//                            }
+//                            .frame(maxWidth: .infinity, alignment: .leading)
+//                            .padding(15)
+//                            
+//                            Divider()
+//                                .frame(height:0.8)
+//                                .overlay(.gray)
+//                            
+//                            HStack{
+//                                Image(systemName: "location")
+//                                    .foregroundColor(Color(hexStringToUIColor(hex: "#3D383880")))
+//                                
+//                                Text("Entered address")
+//                                    .font(.custom("SF Pro Display", size: 12))
+//                                    .foregroundColor(Color(hexStringToUIColor(hex: "#3D383880")))
+//                            }
+//                            .frame(maxWidth: .infinity, alignment: .leading)
+//                            .padding(15)
+//                            
+//                        }
+//                        .frame(minWidth: 300)
+//                        .background(.white)
+//                        .cornerRadius(25)
+//                        //                    .overlay(
+//                        //                        RoundedRectangle(cornerRadius: 25)
+//                        //                            .stroke(Color(hexStringToUIColor(hex: "#CDCDCD")), lineWidth: 1)
+//                        //
+//                        //                    )
+//                    }
+//                    .frame(maxWidth: .infinity, alignment: .leading)
+//                    .padding(.horizontal, 30)
+//                    .padding(.vertical, 20)
                     
                     
                     ScrollView(.vertical){
@@ -168,6 +168,8 @@ struct CartView: View{
                                 .frame(height:2.0)
                                 .overlay(.gray)
                                 .padding(0)
+                            
+                            Spacer()
                             
                             VStack(alignment: .leading, spacing:10){
                                 HStack{

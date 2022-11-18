@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    
     func isAuthenticated() -> Bool{
         let defaults = UserDefaults.standard
         guard let _ = defaults.string(forKey: "jsonwebtoken") else {
@@ -21,12 +22,12 @@ struct ContentView: View {
     var body: some View {
         
         if currentPage > totalPages {
-            //if self.isAuthenticated() {
-                Home()
-            //}
-//            else {
-//                signIn()
-//            }
+         //   if self.isAuthenticated() {
+      //          Home()
+         //   }
+         //   else {
+                signIn()
+       //     }
         }
         else {
             OnboardingScreen()
