@@ -17,6 +17,11 @@ class CartViewModel: ObservableObject{
     @Published var pickingUp = true
     @Published var isActive = false
     
+    init(){
+        print("initialized")
+        getCartItems()
+    }
+    
     func getCartItems(){
         
         let defaults = UserDefaults.standard
@@ -73,6 +78,7 @@ class CartViewModel: ObservableObject{
                             self.total_cart_price += 5
                         }
                     }
+                    print(self.cartItems)
                 }
             case .failure(let error):
                 //self.loginAlert = true

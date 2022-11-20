@@ -9,15 +9,15 @@ import SwiftUI
 
 struct cartButton: View {
     
-    var numberOfProducts: Int
+    @Binding var cartItems: [CartItem]
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
             Image("cartButton")
                 .padding(.top, 5)
             
-            if numberOfProducts > 0 {
-                Text("\(numberOfProducts)")
+            if cartItems.count > 0 {
+                Text("\(cartItems.count)")
                     .frame(width: 15, height: 15)
                     .padding(5)
                     .background(.red)
@@ -28,8 +28,3 @@ struct cartButton: View {
     }
 }
 
-struct cartButton_Previews: PreviewProvider {
-    static var previews: some View {
-        cartButton(numberOfProducts: 1)
-    }
-}

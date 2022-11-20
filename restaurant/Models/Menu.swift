@@ -19,12 +19,15 @@ struct Dishes: Codable {
 struct Dish: Codable {
     var id: Int
     var name: String
-    var price, weight: Float
+    var description: String?
+    var price: Float
+    var weight: Float?
     var photo: String?
+    var category: Category?
     //let itemImage: ItemImage?
     
     enum CodingKeys: String, CodingKey {
-        case id, name, price, weight, photo
+        case id, name, price, description, weight, photo
     }
     
     init() {
@@ -40,10 +43,30 @@ struct Dish: Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(Int.self, forKey: .id)
         name = try container.decode(String.self, forKey: .name)
+        description = try container.decodeIfPresent(String.self, forKey: .description)
         photo = try container.decodeIfPresent(String.self, forKey: .photo)
-        weight = try container.decode(Float.self, forKey: .weight)
+        weight = try container.decodeIfPresent(Float.self, forKey: .weight)
         price = try container.decode(Float.self, forKey: .price)
     }
+}
+
+struct Category: Codable{
+    var id: Int
+    var name: String
+    
+    enum CodingKeys: String, CodingKey{
+        case id, name
+    }
+    
+    init(){
+        id = 0
+        name = ""
+    }
+    
+    init(from decoder: Decoder) throws{
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(Int.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)    }
 }
 
 //struct ItemImage: Codable {

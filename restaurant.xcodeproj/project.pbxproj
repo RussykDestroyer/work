@@ -29,7 +29,7 @@
 		ACDD471E29250DD40006ED5F /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD471D29250DD40006ED5F /* Login.swift */; };
 		ACDD472029250E1D0006ED5F /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD471F29250E1D0006ED5F /* Registration.swift */; };
 		ACDD47242925288B0006ED5F /* MenuWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD47232925288B0006ED5F /* MenuWebService.swift */; };
-		ACDD4726292551190006ED5F /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD4725292551190006ED5F /* Cart.swift */; };
+		ACDD4726292551190006ED5F /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD4725292551190006ED5F /* CartView.swift */; };
 		ACDD47292925745B0006ED5F /* HexToUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD47282925745B0006ED5F /* HexToUIColor.swift */; };
 		ACDD472C29262E8D0006ED5F /* AppNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD472B29262E8D0006ED5F /* AppNavBarView.swift */; };
 		ACDD472E29262FE10006ED5F /* CustomNavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACDD472D29262FE10006ED5F /* CustomNavBarView.swift */; };
@@ -65,7 +65,7 @@
 		ACDD471D29250DD40006ED5F /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		ACDD471F29250E1D0006ED5F /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		ACDD47232925288B0006ED5F /* MenuWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuWebService.swift; sourceTree = "<group>"; };
-		ACDD4725292551190006ED5F /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		ACDD4725292551190006ED5F /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		ACDD47282925745B0006ED5F /* HexToUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexToUIColor.swift; sourceTree = "<group>"; };
 		ACDD472B29262E8D0006ED5F /* AppNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavBarView.swift; sourceTree = "<group>"; };
 		ACDD472D29262FE10006ED5F /* CustomNavBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarView.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 				ACDD47162924C7550006ED5F /* Sidebar.swift */,
 				ACDD471D29250DD40006ED5F /* Login.swift */,
 				ACDD471F29250E1D0006ED5F /* Registration.swift */,
-				ACDD4725292551190006ED5F /* Cart.swift */,
+				ACDD4725292551190006ED5F /* CartView.swift */,
 				ACB6B61E2927C020001677D7 /* CheckoutView.swift */,
 			);
 			path = Views;
@@ -319,7 +319,7 @@
 				ACB6B6152927975F001677D7 /* CheckoutIntentResponse.swift in Sources */,
 				ACDD473429263D640006ED5F /* CustomNavLink.swift in Sources */,
 				ACDD472E29262FE10006ED5F /* CustomNavBarView.swift in Sources */,
-				ACDD4726292551190006ED5F /* Cart.swift in Sources */,
+				ACDD4726292551190006ED5F /* CartView.swift in Sources */,
 				ACDD471E29250DD40006ED5F /* Login.swift in Sources */,
 				ACDD47192924EE9A0006ED5F /* LoginViewModel.swift in Sources */,
 				ACDD4730292639550006ED5F /* CustomNavBarContainerView.swift in Sources */,
