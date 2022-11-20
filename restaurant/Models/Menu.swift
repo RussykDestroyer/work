@@ -27,7 +27,7 @@ struct Dish: Codable {
     //let itemImage: ItemImage?
     
     enum CodingKeys: String, CodingKey {
-        case id, name, price, description, weight, photo
+        case id, name, price, description, weight, photo, category
     }
     
     init() {
@@ -47,6 +47,7 @@ struct Dish: Codable {
         photo = try container.decodeIfPresent(String.self, forKey: .photo)
         weight = try container.decodeIfPresent(Float.self, forKey: .weight)
         price = try container.decode(Float.self, forKey: .price)
+        category = try container.decodeIfPresent(Category.self, forKey: .category)
     }
 }
 
