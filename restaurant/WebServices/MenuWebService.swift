@@ -32,7 +32,7 @@ class MenuWebService{
                 return
             }
             
-            print(dishes)
+            //print(dishes)
             completion(.success(dishes))
             
         }.resume()

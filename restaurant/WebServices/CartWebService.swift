@@ -60,7 +60,7 @@ class CartWebService{
                 return
             }
             
-            print(cartItem)
+            //print(cartItem)
             completion(.success(cartItem))
             
         }.resume()
@@ -87,7 +87,7 @@ class CartWebService{
                 return
             }
             
-            print(cartItem)
+           // print(cartItem)
             completion(.success(cartItem))
             
         }.resume()
