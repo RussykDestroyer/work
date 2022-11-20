@@ -13,6 +13,10 @@ struct CartView: View{
     
     @ObservedObject var CartVM: CartViewModel
     
+    @State var showCheckout: Bool = false
+    
+    @State var animationAmount = 1.0
+
     var body: some View{
         NavigationView{
             
@@ -134,9 +138,20 @@ struct CartView: View{
                 .background(Color(hexStringToUIColor(hex: "#F5F5F5")))
                 .overlay(ConfirmationButton, alignment: .bottom)
                 
+                
+                if showCheckout{
+                    CheckoutView()
+                        .frame(height: UIScreen.main.bounds.height)
+                        .transition(.asymmetric(
+                            insertion: .move(edge: .bottom),
+                            removal: AnyTransition.opacity.animation(.easeInOut)))
+                        .animation(.easeInOut, value: animationAmount)
+                }
             }
+            
+            
         }
-        }
+    }
     
     var PaymentMethodAndLocation: some View {
                             HStack( spacing: 0){
