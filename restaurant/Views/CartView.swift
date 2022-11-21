@@ -12,15 +12,13 @@ import SwiftUI
 struct CartView: View{
     
     @ObservedObject var CartVM: CartViewModel
-    
-    @State var showCheckout: Bool = false
-    
-    @State var animationAmount = 1.0
+        
+    @State var animationAmount = 3.0
 
     var body: some View{
         NavigationView{
             
-            ZStack{
+            ZStack(alignment: .bottom){
                 VStack{
                     
                     Toggle(isOn: $CartVM.pickingUp){
@@ -138,15 +136,29 @@ struct CartView: View{
                 .background(Color(hexStringToUIColor(hex: "#F5F5F5")))
                 .overlay(ConfirmationButton, alignment: .bottom)
                 
-                
-                if showCheckout{
-                    CheckoutView()
-                        .frame(height: UIScreen.main.bounds.height)
-                        .transition(.asymmetric(
-                            insertion: .move(edge: .bottom),
-                            removal: AnyTransition.opacity.animation(.easeInOut)))
-                        .animation(.easeInOut, value: animationAmount)
+                VStack{
+                    
+                    CheckoutView(CartVM: CartVM)
+                    // Move effect from left
+                        .offset(y: CartVM.showCheckout ? UIScreen.main.bounds.height - 520 : UIScreen.main.bounds.height)
+                    
+                    Spacer(minLength: 0)
                 }
+                .background(
+                    Color.black.opacity(CartVM.showCheckout ? 0.3 : 0).ignoresSafeArea()
+                    // closing when Taps on outside...
+                        .onTapGesture(perform: {
+                            withAnimation(.easeIn){CartVM.showCheckout.toggle()}
+                        })
+                )
+                
+//                if showCheckout{
+//                    CheckoutView(showCheckout: $showCheckout)
+//                        .frame(height: UIScreen.main.bounds.height*0.3)
+//                        .background(Color.white)
+//                        .transition(.move(edge: .bottom))
+//                        .animation(.easeInOut)
+//                }
             }
             
             
@@ -203,10 +215,11 @@ struct CartView: View{
             HStack{
                 VStack(spacing: 0) {
                     Button(action: {CartVM.IncrementCartItem(id: cartItem.dish.id)}, label: {
-                        Image(systemName: "plus")
+                       // Image(systemName: "plus")
+                        Text("Add")
                             .foregroundColor(Color(hexStringToUIColor(hex: "#CDCDCD")))
                     })
-                    .frame(width: 60, height: 40)
+                    .frame(width: 80, height: 40)
                     .background(.white)
                     .cornerRadius(10)
                     
@@ -223,10 +236,12 @@ struct CartView: View{
                     //                                .overlay(.gray)
                     
                     Button(action: {CartVM.DecrementCartItem(id: cartItem.dish.id)}, label: {
-                        Image(systemName: "minus")
+                        Text("Remove")
+                        
+                        //Image(systemName: "minus")
                             .foregroundColor(Color(hexStringToUIColor(hex: "#CDCDCD")))
                     })
-                    .frame(width: 60, height: 40)
+                    .frame(width: 80, height: 40)
                     .background(.white)
                     .cornerRadius(10)
                 }
@@ -281,31 +296,30 @@ struct CartView: View{
     
     var ConfirmationButton: some View {
         VStack(alignment: .leading, spacing: 15) {
-            NavigationLink(destination: CheckoutView(), isActive: $CartVM.isActive, label: {
-                Button(action: {
-                    CartVM.startCheckout{ clientSecret in
-                        
-                        PaymentConfig.shared.paymentIntentClientSecret = clientSecret
-                        DispatchQueue.main.async {
-                            CartVM.isActive = true
-                        }
-                    }
-                }, label: {
-                    HStack(spacing: 0, content: {
-                        Text("Checkout ")
-                            .font(.system(size: 15))
-                            .fontWeight(.bold)
-                            .foregroundColor(Color(hexStringToUIColor(hex: "#3D3838")))
-                        Text("$" + String(format: "%.2f", CartVM.total_cart_price))
-                            .font(.system(size: 15))
-                            .fontWeight(.bold)
-                            .foregroundColor(Color(hexStringToUIColor(hex: "#FF0036")))
-                    })
+            Button(action: {
+//                CartVM.startCheckout{ clientSecret in
+//                    PaymentConfig.shared.paymentIntentClientSecret = clientSecret
+//                    DispatchQueue.main.async {
+//                        CartVM.isActive = true
+//                        self.showCheckout = true
+//                    }
+//                }
+                withAnimation(.easeIn){CartVM.showCheckout.toggle()}
+            }, label: {
+                HStack(spacing: 0, content: {
+                    Text("Checkout ")
+                        .font(.system(size: 15))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(hexStringToUIColor(hex: "#3D3838")))
+                    Text("$" + String(format: "%.2f", CartVM.total_cart_price))
+                        .font(.system(size: 15))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color(hexStringToUIColor(hex: "#FF0036")))
                 })
-                .frame(maxWidth: .infinity, maxHeight: 50)
-                .background(Color(hexStringToUIColor(hex: "FFD9E1")))
-                .cornerRadius(25)
             })
+            .frame(maxWidth: .infinity, maxHeight: 50)
+            .background(Color(hexStringToUIColor(hex: "FFD9E1")))
+            .cornerRadius(25)
         }
         .frame(minWidth: 300, alignment: .bottom)
         .padding(25)
