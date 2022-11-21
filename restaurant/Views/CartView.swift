@@ -215,10 +215,11 @@ struct CartView: View{
             HStack{
                 VStack(spacing: 0) {
                     Button(action: {CartVM.IncrementCartItem(id: cartItem.dish.id)}, label: {
-                        Image(systemName: "plus")
+                       // Image(systemName: "plus")
+                        Text("Add")
                             .foregroundColor(Color(hexStringToUIColor(hex: "#CDCDCD")))
                     })
-                    .frame(width: 60, height: 40)
+                    .frame(width: 80, height: 40)
                     .background(.white)
                     .cornerRadius(10)
                     
@@ -235,10 +236,12 @@ struct CartView: View{
                     //                                .overlay(.gray)
                     
                     Button(action: {CartVM.DecrementCartItem(id: cartItem.dish.id)}, label: {
-                        Image(systemName: "minus")
+                        Text("Remove")
+                        
+                        //Image(systemName: "minus")
                             .foregroundColor(Color(hexStringToUIColor(hex: "#CDCDCD")))
                     })
-                    .frame(width: 60, height: 40)
+                    .frame(width: 80, height: 40)
                     .background(.white)
                     .cornerRadius(10)
                 }
