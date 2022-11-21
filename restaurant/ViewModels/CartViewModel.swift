@@ -10,6 +10,8 @@ import Foundation
 
 class CartViewModel: ObservableObject{
     
+    @Published var showCheckout = false
+    
     @Published var cartItems = [CartItem]()
     @Published var total_cart_items_price: Float = 0
     @Published var total_cart_price: Float = 0
@@ -35,6 +37,9 @@ class CartViewModel: ObservableObject{
                 DispatchQueue.main.async {
                     self.cartItems = cartItems
                     
+                    self.total_cart_items_price = 0
+                    self.tax = 0
+                    self.total_cart_price = 0
                     for item in cartItems{
                         self.total_cart_items_price += item.sum_price
                         self.tax += self.total_cart_items_price * 0.1
@@ -78,7 +83,6 @@ class CartViewModel: ObservableObject{
                             self.total_cart_price += 5
                         }
                     }
-                    print(self.cartItems)
                 }
             case .failure(let error):
                 //self.loginAlert = true
@@ -127,33 +131,5 @@ class CartViewModel: ObservableObject{
         }
     }
     
-    func startCheckout(completion: @escaping (String?) -> Void){
-        let defaults = UserDefaults.standard
-        guard let token = defaults.string(forKey: "jsonwebtoken") else {
-            return
-        }
-        
-        let url = URL(string: "http://localhost:8000/api/order/create-payment-intent/")!
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        
-        URLSession.shared.dataTask(with: request) {data, response, error in
-            
-            guard let data = data, error == nil,
-                  (response as? HTTPURLResponse)?.statusCode == 200
-            else{
-                completion(nil)
-                return
-            }
-            
-            let checkoutIntentResponse = try?
-                JSONDecoder().decode(CheckoutIntentResponse.self, from: data)
-            completion(checkoutIntentResponse?.clientSecret)
-            
-        }.resume()
-    }
     
 }
