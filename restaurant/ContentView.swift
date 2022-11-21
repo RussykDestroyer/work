@@ -22,13 +22,13 @@ struct ContentView: View {
     var body: some View {
         
         if currentPage > totalPages {
-            if self.isAuthenticated() {
-                Home()
-            }
-            else {
-                signIn()
-            }
-
+//            if self.isAuthenticated() {
+//                Home()
+//            }
+//            else {
+//                signIn()
+//            }
+            Home()
         }
         else {
             OnboardingScreen()

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		596CFC212925435F008263F0 /* SlidingTabView in Frameworks */ = {isa = PBXBuildFile; productRef = 596CFC202925435F008263F0 /* SlidingTabView */; };
+		598348C8292BA8A200F8D189 /* OrderHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598348C7292BA8A200F8D189 /* OrderHistoryView.swift */; };
 		59C8FC6E2922EC5400A0AAF6 /* restaurantApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C8FC6D2922EC5400A0AAF6 /* restaurantApp.swift */; };
 		59C8FC702922EC5400A0AAF6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C8FC6F2922EC5400A0AAF6 /* ContentView.swift */; };
 		59C8FC722922EC5500A0AAF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59C8FC712922EC5500A0AAF6 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		59403FBA29246E1F003FAA2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		598348C7292BA8A200F8D189 /* OrderHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryView.swift; sourceTree = "<group>"; };
 		59C8FC6A2922EC5400A0AAF6 /* restaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = restaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59C8FC6D2922EC5400A0AAF6 /* restaurantApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = restaurantApp.swift; sourceTree = "<group>"; };
 		59C8FC6F2922EC5400A0AAF6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				ACDD471F29250E1D0006ED5F /* Registration.swift */,
 				ACDD4725292551190006ED5F /* CartView.swift */,
 				ACB6B61E2927C020001677D7 /* CheckoutView.swift */,
+				598348C7292BA8A200F8D189 /* OrderHistoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 				ACDD4738292661C00006ED5F /* CartModel.swift in Sources */,
 				59F4DCBC2927EA9500DCBBA3 /* cartButton.swift in Sources */,
 				ACDD473A292663590006ED5F /* CartWebService.swift in Sources */,
+				598348C8292BA8A200F8D189 /* OrderHistoryView.swift in Sources */,
 				ACDD473229263BF40006ED5F /* CustomNavView.swift in Sources */,
 				ACB6B617292798A6001677D7 /* PaymentConfig.swift in Sources */,
 				ACB6B6232927C70A001677D7 /* CheckoutViewModel.swift in Sources */,
