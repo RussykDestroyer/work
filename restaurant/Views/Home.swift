@@ -18,7 +18,16 @@ struct Home: View {
     
     @State var animationAmount = 1.0
     
-    @State var outCategory = ""
+    @State var outCategory = "menu"
+    
+    func setCategory(category: String){
+        if outCategory != category {
+        outCategory = category
+        }
+        else{
+            outCategory = "menu"
+        }
+    }
     
     
     var body: some View {
@@ -60,7 +69,7 @@ struct Home: View {
                             .fontWeight(.bold)
                             .font(.title2)
                         
-                        if outCategory != ""{
+                        if outCategory != "menu"{
                             DishesWithCategory
                         }
                         else {
@@ -188,7 +197,9 @@ struct Home: View {
         ScrollView(.horizontal, showsIndicators: false) {
             
             HStack {
-                Button(action: {outCategory = "breakfasts"}, label: {
+                Button(action: {
+                    setCategory(category: "breakfasts")
+                }, label: {
                     if outCategory == "breakfasts"{
                         Image("breakfastOn")
                     }
@@ -196,7 +207,9 @@ struct Home: View {
                         Image("breakfastOff")
                     }
                 })
-                Button(action: {outCategory = "nachos"}, label: {
+                Button(action: {
+                    setCategory(category: "nachos")
+                }, label: {
                     if outCategory == "nachos"{
                         Image("nachosOn")
                     }
@@ -204,7 +217,9 @@ struct Home: View {
                         Image("nachosOff")
                     }
                 })
-                Button(action: {outCategory = "tacos"}, label: {
+                Button(action: {
+                    setCategory(category: "tacos")
+                }, label: {
                     if outCategory == "tacos"{
                         Image("tacosOn")
                     }
@@ -212,7 +227,9 @@ struct Home: View {
                         Image("tacosOff")
                     }
                 })
-                Button(action: {outCategory = "platos"}, label: {
+                Button(action: {
+                    setCategory(category: "platos")
+                }, label: {
                     if outCategory == "platos"{
                         Image("platosOn")
                     }
@@ -220,7 +237,9 @@ struct Home: View {
                         Image("platosOff")
                     }
                 })
-                Button(action: {outCategory = "soups"}, label: {
+                Button(action: {
+                    setCategory(category: "soups")
+                }, label: {
                     if outCategory == "soups"{
                         Image("soupsOn")
                     }
@@ -228,7 +247,9 @@ struct Home: View {
                         Image("soupsOff")
                     }
                 })
-                Button(action: {outCategory = "salads"}, label: {
+                Button(action: {
+                    setCategory(category: "salads")
+                }, label: {
                     if outCategory == "salads"{
                         Image("saladsOn")
                     }
@@ -236,7 +257,9 @@ struct Home: View {
                         Image("saladsOff")
                     }
                 })
-                Button(action: {outCategory = "drinks"}, label: {
+                Button(action: {
+                    setCategory(category: "drinks")
+                }, label: {
                     if outCategory == "drinks"{
                         Image("drinksOn")
                     }
@@ -244,7 +267,9 @@ struct Home: View {
                         Image("drinksOff")
                     }
                 })
-                Button(action: {outCategory = "cocktails"}, label: {
+                Button(action: {
+                    setCategory(category: "cocktails")
+                }, label: {
                     if outCategory == "cocktails"{
                         Image("cocktailsOn")
                     }
