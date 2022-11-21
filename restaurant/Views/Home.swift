@@ -301,11 +301,11 @@ struct Home: View {
                         
                         Text(dish.description ?? "no description")
                             .textCase(.lowercase)
-                            .frame(width: 120, alignment: .leading)
+                            .frame(width: 150, alignment: .leading)
                             .font(.caption)
                             .foregroundColor(Color(red: 0.6588235294117647, green: 0.6588235294117647, blue: 0.6588235294117647))
                             .multilineTextAlignment(.leading)
-                            .lineLimit(3)
+                            .lineLimit(5)
                             .padding(.bottom, 1)
                         
                         

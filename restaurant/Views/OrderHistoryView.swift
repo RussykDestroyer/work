@@ -79,7 +79,7 @@ struct OrderHistoryView: View {
                 Spacer()
                 
             }
-            .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(red: 0.9607843137254902, green: 0.9607843137254902, blue: 0.9607843137254902)/*@END_MENU_TOKEN@*/)
+            .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color(red: 0.9607843137254902, green: 0.9607843137254902, blue: 0.9607843137254902)/*@END_MENU_TOKEN@*/).ignoresSafeArea()
         
         
     }
